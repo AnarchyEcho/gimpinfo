@@ -62,7 +62,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by Echo
+          Powered by Echo and Tom
         </a>
       </Footer>
     </Container>
