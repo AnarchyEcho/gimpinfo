@@ -2,7 +2,22 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+import { Hiscores } from 'oldschooljs'
+
+export async function getStaticProps(context) {
+  const echoRes = await Hiscores.fetch(`anarchyrunic`)
+  console.log(echoRes)
+  const echo = JSON.stringify(echoRes.skills)
+
+  return {
+    props: {
+      echo,
+    },
+  }
+}
+
+export default function Home({ echo }) {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,8 +28,9 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1>Names of the degens</h1>
+        <h3>Echo GIM, overall level: {echo}</h3>
         <h3>GIMFunFun</h3>
-        <h3>emerald12 gim</h3>
+        <h3>Emerald12 GIM</h3>
       </main>
 
       <footer className={styles.footer}>
