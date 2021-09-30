@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-
-import Head from 'next/head'
 import Image from 'next/image'
+import Head from 'next/head'
+import { Hiscores } from 'oldschooljs'
 
 const Container = styled.div`
   min-height: 100vh;
@@ -29,15 +29,7 @@ const Footer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-grow: 1;
-    }
 `
-
-import { Hiscores } from 'oldschooljs'
 
 export async function getStaticProps(context) {
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
@@ -66,16 +58,11 @@ export default function Home({ echo }) {
         <h3>Echo GIM, overall level: {echo}</h3>
         <h3>GIMFunFun</h3>
         <h3>Emerald12 GIM</h3>
+        <h3>YBmad GIM</h3>
       </Main>
 
       <Footer>
-        <a
-          href="https://github.com/KodeAndre"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by Echo and Tom
-        </a>
+          <span>Powered by <a href="https://github.com/KodeAndre" target="_blank" rel="noopener noreferrer"><b>Echo</b></a> and <a href="https://github.com/Tomkhcoding" target="_blank" rel="noopener noreferrer"><b>Tom</b></a></span>
       </Footer>
     </Container>
   )
