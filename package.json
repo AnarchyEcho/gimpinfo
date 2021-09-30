@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "babel-plugin-styled-components": "^1.13.2",
     "next": "11.1.2",
     "react": "17.0.2",
