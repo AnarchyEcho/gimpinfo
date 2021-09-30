@@ -66,7 +66,7 @@ const Footer = styled.div`
 
 export async function getStaticProps(context) {
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
-  const echo = JSON.stringify(echoRes.skills.overall)
+  const echo = JSON.stringify(echoRes.skills.overall.level)
 
   return {
     props: {
@@ -96,7 +96,8 @@ export default function Home({ echo }) {
       <Main>
 
         <Echo>
-          <h3>Echo GIM, overall level: {echo}</h3>
+          <h3>Echo GIM</h3>
+          <p>Overall level: <b>{echo}</b></p>
         </Echo>
 
         <Funfun>
@@ -114,7 +115,12 @@ export default function Home({ echo }) {
       </Main>
 
       <Footer>
-          <span>Powered by <a href="https://github.com/KodeAndre" target="_blank" rel="noopener noreferrer"><b>Echo</b></a> and <a href="https://github.com/Tomkhcoding" target="_blank" rel="noopener noreferrer"><b>Tom</b></a></span>
+          <span>
+            Powered by 
+            <a href="https://github.com/KodeAndre" target="_blank" rel="noopener noreferrer"><b> Echo </b></a> 
+            and
+            <a href="https://github.com/Tomkhcoding" target="_blank" rel="noopener noreferrer"><b> Tom</b></a>
+          </span>
       </Footer>
     </Container>
   )
