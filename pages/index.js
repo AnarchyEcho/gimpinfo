@@ -81,7 +81,7 @@ export default function Home({ echo }) {
     <Container>
       <Head>
         <title>GIMP Info</title>
-        <meta name="description" content="Created by Echo" />
+        <meta name="description" content="Created by Echo and Tom" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
