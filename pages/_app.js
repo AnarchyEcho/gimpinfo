@@ -25,11 +25,12 @@ const GlobalStyle = createGlobalStyle`
 const theme = {}
 
 export default function MyApp({ Component, pageProps }) {
-  return 
-  <>
-    <GlobalStyle />
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
-  </>
+  return (
+    <>
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
+  )
 }
