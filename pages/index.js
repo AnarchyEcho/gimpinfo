@@ -7,7 +7,7 @@ import { Hiscores } from 'oldschooljs'
 export async function getStaticProps(context) {
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
   console.log(echoRes)
-  const echo = JSON.stringify(echoRes.skills)
+  const echo = JSON.stringify(echoRes.skills.overall)
 
   return {
     props: {
