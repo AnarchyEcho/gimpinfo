@@ -37,10 +37,21 @@ const Footer = styled.div`
     }
 `
 
+import { Hiscores } from 'oldschooljs'
 
+export async function getStaticProps(context) {
+  const echoRes = await Hiscores.fetch(`anarchyrunic`)
+  console.log(echoRes)
+  const echo = JSON.stringify(echoRes.skills)
 
-export default function Home() {
+  return {
+    props: {
+      echo,
+    },
+  }
+}
 
+export default function Home({ echo }) {
 
   return (
     <Container>
@@ -52,9 +63,10 @@ export default function Home() {
 
       <Main>
         <h1>Names of the degens</h1>
+        <h3>Echo GIM, overall level: {echo}</h3>
         <h3>GIMFunFun</h3>
-        <h3>emerald12 gim</h3>
-      </Main>
+        <h3>Emerald12 GIM</h3>
+      </main>
 
       <Footer>
         <a
