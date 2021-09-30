@@ -1,48 +1,72 @@
 import styled from 'styled-components'
-
-import Head from 'next/head'
 import Image from 'next/image'
+import Head from 'next/head'
+import { Hiscores } from 'oldschooljs'
 
 const Container = styled.div`
   min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-`
-
-const Main = styled.div`
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-
-const Footer = styled.div`
   width: 100%;
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 0.5fr 0.1fr 1fr 0.1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "Banner"
+    "Title"
+    "Main"
+    "Footer"; 
+`
+const Main = styled.div`
+  width: 100%;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Echo Funfun Emerald YB";
+  justify-items: center;
+`
+const Banner = styled.div`
+  justify-self: center;
+  align-self: center;
+  grid-area: Banner;
+`
+const Title = styled.div`
+  justify-self: center;
+  grid-area: Title;
+`
+const Echo = styled.div`
+  text-align: center;
+  grid-area: Echo;
+`
+const Funfun = styled.div`
+  text-align: center;
+  grid-area: Funfun;
+`
+const Emerald = styled.div`
+  text-align: center;
+  grid-area: Emerald;
+`
+const YB = styled.div`
+  text-align: center;
+  grid-area: YB;
+`
+const Footer = styled.div`
+  width: 100vw;
   height: 100px;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-grow: 1;
-    }
+  grid-area: Footer;
 `
-
-import { Hiscores } from 'oldschooljs'
 
 export async function getStaticProps(context) {
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
-  console.log(echoRes)
-  const echo = JSON.stringify(echoRes.skills.overall)
+  const echo = JSON.stringify(echoRes.skills.overall.level)
 
   return {
     props: {
@@ -61,21 +85,42 @@ export default function Home({ echo }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+        <Banner>
+          <Image src='https://www.runescape.com/img/rsp777/title2/rslogo3.png' alt="OSRS Banner" width="700" height="200" />
+        </Banner>
+
+        <Title>
+          <h1>Names of the degens</h1>
+        </Title>
+
       <Main>
-        <h1>Names of the degens</h1>
-        <h3>Echo GIM, overall level: {echo}</h3>
-        <h3>GIMFunFun</h3>
-        <h3>Emerald12 GIM</h3>
+
+        <Echo>
+          <h3>Echo GIM</h3>
+          <p>Overall level: <b>{echo}</b></p>
+        </Echo>
+
+        <Funfun>
+          <h3>GIMFunFun</h3>
+        </Funfun>
+
+        <Emerald>
+          <h3>Emerald12 GIM</h3>
+        </Emerald>
+
+        <YB>
+          <h3>YBmad GIM</h3>
+        </YB>
+
       </Main>
 
       <Footer>
-        <a
-          href="https://github.com/KodeAndre"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by Echo and Tom
-        </a>
+          <span>
+            Powered by 
+            <a href="https://github.com/KodeAndre" target="_blank" rel="noopener noreferrer"><b> Echo </b></a> 
+            and
+            <a href="https://github.com/Tomkhcoding" target="_blank" rel="noopener noreferrer"><b> Tom</b></a>
+          </span>
       </Footer>
     </Container>
   )
