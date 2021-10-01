@@ -4,16 +4,15 @@ import Image from 'next/image'
 const Username = styled.h3`
   text-transform: capitalize;
 `
-
-export default function HiScore(props) {
-
-    const Container = styled.div`
+const Container = styled.div`
     background-image: url('https://www.runescape.com/img/rsp777/hiscores/scroll_middle.gif');
     background-repeat: repeat-y;
     background-size:100% auto;
     height:fit-content;
     position:relative;
-    `
+`
+export default function HiScore(props) {
+
     const skillsArray = Object.keys(props.skills)
     console.log(skillsArray)
 
