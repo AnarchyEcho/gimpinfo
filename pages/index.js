@@ -38,6 +38,9 @@ const Title = styled.div`
   justify-self: center;
   grid-area: Title;
 `
+const Username = styled.h3`
+  text-transform: capitalize;
+`
 const Echo = styled.div`
   text-align: center;
   grid-area: Echo;
@@ -109,22 +112,23 @@ export default function Home({ echo, funfun, emerald, yb }) {
       <Main>
 
         <Echo>
-          <h3>Echo GIM</h3>
+          <Username>{echo.username}</Username>
           <p>Overall level: <b>{echo.skills.overall.level}</b></p>
+          <p>Attack level: <b>{echo.skills.attack.level}</b></p>
         </Echo>
-
+1
         <Funfun>
-          <h3>GIMFunFun</h3>
+          <Username>{funfun.username}</Username>
           <p>Overall level: <b>{funfun.skills.overall.level}</b></p>
         </Funfun>
 
         <Emerald>
-          <h3>Emerald12 GIM</h3>
+          <Username>{emerald.username}</Username>
           <p>Overall level: <b>{emerald.skills.overall.level}</b></p>
         </Emerald>
 
         <YB>
-          <h3>YBmad GIM</h3>
+          <Username>{yb.username}</Username>
           <p>Overall level: <b>{yb.skills.overall.level}</b></p>
         </YB>
 
