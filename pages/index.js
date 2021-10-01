@@ -89,8 +89,6 @@ export async function getStaticProps(context) {
 
 export default function Home({ echo, funfun, emerald, yb }) {
 
-
-
   return (
     <Container>
       <Head>
