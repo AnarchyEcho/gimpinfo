@@ -94,8 +94,8 @@ export default function Home({ echo, funfun, emerald, yb }) {
       <Head>
         <title>GIMP Info</title>
         <meta name="description" content="Created by Echo and Tom" />
-        <link rel="icon" href="https://oldschool.runescape.wiki/images/0/09/Ironman_chat_badge.png?a0a83" />
-        <link rel="image_src" type="image/png" href="https://oldschool.runescape.wiki/images/0/09/Ironman_chat_badge.png?a0a83" />
+        <link rel="icon" href="https://oldschool.runescape.wiki/images/0/09/Ironman_chat_badge.png" />
+        <link rel="image_src" type="image/png" href="https://oldschool.runescape.wiki/images/0/09/Ironman_chat_badge.png" />
       </Head>
 
         <Banner>
