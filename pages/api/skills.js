@@ -1,78 +1,28 @@
 export default function handler(req, res) {
-    res.status(200).json(
-        [
-            {
-                agility: "/skill/agility.png"
-            },
-            {
-                attack: "/skill/attack.png"
-            },
-            {
-                construction: "/skill/construction.png"
-            },
-          {
-              cooking: "/skill/cooking.png"
-            },
-            {
-                crafting: "/skill/crafting.png"
-            },
-            {
-                defence: "/skill/defence.png"
-            },
-          {
-              farming: "/skill/farming.png"
-            },
-            {
-                firemaking: "/skill/firemaking.png"
-            },
-            {
-                fishing: "/skill/fishing.png"
-            },
-            {
-                fletching: "/skill/fletching.png"
-            },
-            {
-                herblore: "/skill/herblore.png"
-            },
-            {
-                hitpoints: "/skill/hitpoints.png"
-            },
-          {
-              hunter: "/skill/hunter.png"
-            },
-            {
-                magic: "/skill/magic.png"
-            },
-            {
-                mining: "/skill/mining.png"
-            },
-            {
-                prayer: "/skill/prayer.png"
-            },
-            {
-                ranged: "/skill/ranged.png"
-            },
-            {
-                runecrafting: "/skill/runecraft.png"
-            },
-            {
-                slayer: "/skill/slayer.png"
-            },
-            {
-                smithing: "/skill/smithing.png"
-            },
-            {
-                strength: "/skill/strength.png"
-            },
-            {
-                thieving: "/skill/thieving.png"
-            },
-            {
-                total: "/skill/total.png"
-            },
-            {
-              woodcutting: "/skill/woodcutting.png"
-            }
-        ]
-        )
-    }
+    res.status(200).json({
+        agility: {picture: "/skill/agility.png"},
+        attack: {picture: "/skill/attack.png"},
+        defence: {picture: "/skill/defence.png"},
+        hitpoints: {picture: "/skill/hitpoints.png"},
+        prayer: {picture: "/skill/prayer.png"},
+        ranged: {picture: "/skill/ranged.png"},
+        runecraft: {picture: "/skill/runecraft.png"},
+        slayer: {picture: "/skill/slayer.png"},
+        strength: {picture: "/skill/strength.png"},
+        thieving: {picture: "/skill/thieving.png"},
+        woodcutting: {picture: "/skill/woodcutting.png"},
+        construction: {picture: "/skill/construction.png"},
+        hunter: {picture: "/skill/hunter.png"},
+        mining: {picture: "/skill/mining.png"},
+        smithing: {picture: "/skill/smithing.png"},
+        fishing: {picture: "/skill/fishing.png"},
+        cooking: {picture: "/skill/cooking.png"},
+        firemaking: {picture: "/skill/firemaking.png"},
+        farming: {picture: "/skill/farming.png"},
+        crafting: {picture: "/skill/crafting.png"},
+        magic: {picture: "/skill/magic.png"},
+        fletching: {picture: "/skill/fletching.png"},
+        total: {picture: "/skill/total.png"},
+        herblore: {picture: "/skill/herblore.png"},  
+    })
+}
