@@ -65,6 +65,10 @@ const Footer = styled.div`
 `
 
 export async function getStaticProps(context) {
+  const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
+  const skills = skillsRes
+  console.log(skills)
+
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
   const echo = JSON.parse(JSON.stringify(echoRes))
 
@@ -120,6 +124,7 @@ export default function Home({ echo, funfun, emerald, yb }) {
         <Emerald>
           <h3>Emerald12 GIM</h3>
           <p>Overall level: <b>{emerald.skills.overall.level}</b></p>
+          <Image src='https://oldschool.runescape.wiki/images/8/86/Agility_icon.png' alt="OSRS Banner" width="50" height="50" />
         </Emerald>
 
         <YB>
