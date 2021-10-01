@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background-color: #202020; 
     color: #f5f5f5;
+    box-sizing: border-box;
   }
 
   a {

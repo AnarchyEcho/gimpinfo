@@ -9,16 +9,15 @@ const Container = styled.div`
   min-height: 100vh;
   height: 100vh;
   width: 100%;
-  display: grid; 
-  grid-auto-columns: 1fr; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 0.5fr 0.1fr 1fr 0.1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.1fr 1fr 0.1fr;
+  gap: 0px 0px;
+  grid-template-areas:
     "Banner"
     "Title"
     "Main"
-    "Footer"; 
+    "Footer";
 `
 const Main = styled.div`
   width: 100%;
@@ -60,7 +59,7 @@ const YB = styled.div`
   grid-area: YB;
 `
 const Footer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100px;
   border-top: 1px solid #f5f5f5;
   display: flex;
@@ -72,6 +71,7 @@ const Footer = styled.div`
 export async function getStaticProps(context) {
   const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
   const skills =  await skillsRes.json()
+  console.log(skills)
 
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
   const echo = JSON.parse(JSON.stringify(echoRes))
@@ -121,20 +121,112 @@ export default function Home({ echo, funfun, emerald, yb, skills }) {
           <Username>{echo.username}</Username>
           <p>Overall level: <b>{echo.skills.overall.level}</b></p>
           <p>Attack level: <b>{echo.skills.attack.level}</b></p>
+          <p>Defence level: <b>{echo.skills.defence.level}</b></p>
+          <p>Strength level: <b>{echo.skills.strength.level}</b></p>
+          <p>Hitpoints level: <b>{echo.skills.hitpoints.level}</b></p>
+          <p>Ranged level: <b>{echo.skills.ranged.level}</b></p>
+          <p>Prayer level: <b>{echo.skills.prayer.level}</b></p>
+          <p>Magic level: <b>{echo.skills.magic.level}</b></p>
+          <p>Cooking level: <b>{echo.skills.cooking.level}</b></p>
+          <p>Woodcutting level: <b>{echo.skills.woodcutting.level}</b></p>
+          <p>Fletching level: <b>{echo.skills.fletching.level}</b></p>
+          <p>Fishing level: <b>{echo.skills.fishing.level}</b></p>
+          <p>Firemaking level: <b>{echo.skills.firemaking.level}</b></p>
+          <p>Crafting level: <b>{echo.skills.crafting.level}</b></p>
+          <p>Smithing level: <b>{echo.skills.smithing.level}</b></p>
+          <p>Mining level: <b>{echo.skills.mining.level}</b></p>
+          <p>Herblore level: <b>{echo.skills.herblore.level}</b></p>
+          <p>Agility level: <b>{echo.skills.agility.level}</b></p>
+          <p>Thieving level: <b>{echo.skills.thieving.level}</b></p>
+          <p>Slayer level: <b>{echo.skills.slayer.level}</b></p>
+          <p>Farming level: <b>{echo.skills.farming.level}</b></p>
+          <p>Runecrafting level: <b>{echo.skills.runecraft.level}</b></p>
+          <p>Hunter level: <b>{echo.skills.hunter.level}</b></p>
+          <p>Construction level: <b>{echo.skills.construction.level}</b></p>
         </Echo>
 
         <Funfun>
           <Username>{funfun.username}</Username>
           <p>Overall level: <b>{funfun.skills.overall.level}</b></p>
+          <p>Attack level: <b>{funfun.skills.attack.level}</b></p>
+          <p>Defence level: <b>{funfun.skills.defence.level}</b></p>
+          <p>Strength level: <b>{funfun.skills.strength.level}</b></p>
+          <p>Hitpoints level: <b>{funfun.skills.hitpoints.level}</b></p>
+          <p>Ranged level: <b>{funfun.skills.ranged.level}</b></p>
+          <p>Prayer level: <b>{funfun.skills.prayer.level}</b></p>
+          <p>Magic level: <b>{funfun.skills.magic.level}</b></p>
+          <p>Cooking level: <b>{funfun.skills.cooking.level}</b></p>
+          <p>Woodcutting level: <b>{funfun.skills.woodcutting.level}</b></p>
+          <p>Fletching level: <b>{funfun.skills.fletching.level}</b></p>
+          <p>Fishing level: <b>{funfun.skills.fishing.level}</b></p>
+          <p>Firemaking level: <b>{funfun.skills.firemaking.level}</b></p>
+          <p>Crafting level: <b>{funfun.skills.crafting.level}</b></p>
+          <p>Smithing level: <b>{funfun.skills.smithing.level}</b></p>
+          <p>Mining level: <b>{funfun.skills.mining.level}</b></p>
+          <p>Herblore level: <b>{funfun.skills.herblore.level}</b></p>
+          <p>Agility level: <b>{funfun.skills.agility.level}</b></p>
+          <p>Thieving level: <b>{funfun.skills.thieving.level}</b></p>
+          <p>Slayer level: <b>{funfun.skills.slayer.level}</b></p>
+          <p>Farming level: <b>{funfun.skills.farming.level}</b></p>
+          <p>Runecrafting level: <b>{funfun.skills.runecraft.level}</b></p>
+          <p>Hunter level: <b>{funfun.skills.hunter.level}</b></p>
+          <p>Construction level: <b>{funfun.skills.construction.level}</b></p>
         </Funfun>
 
         <Emerald>
-          <HiScore emerald={emerald} skills={skills}/>
+          <Username>{emerald.username}</Username>
+          <p>Overall level: <b>{emerald.skills.overall.level}</b></p>
+          <p>Attack level: <b>{emerald.skills.attack.level}</b></p>
+          <p>Defence level: <b>{emerald.skills.defence.level}</b></p>
+          <p>Strength level: <b>{emerald.skills.strength.level}</b></p>
+          <p>Hitpoints level: <b>{emerald.skills.hitpoints.level}</b></p>
+          <p>Ranged level: <b>{emerald.skills.ranged.level}</b></p>
+          <p>Prayer level: <b>{emerald.skills.prayer.level}</b></p>
+          <p>Magic level: <b>{emerald.skills.magic.level}</b></p>
+          <p>Cooking level: <b>{emerald.skills.cooking.level}</b></p>
+          <p>Woodcutting level: <b>{emerald.skills.woodcutting.level}</b></p>
+          <p>Fletching level: <b>{emerald.skills.fletching.level}</b></p>
+          <p>Fishing level: <b>{emerald.skills.fishing.level}</b></p>
+          <p>Firemaking level: <b>{emerald.skills.firemaking.level}</b></p>
+          <p>Crafting level: <b>{emerald.skills.crafting.level}</b></p>
+          <p>Smithing level: <b>{emerald.skills.smithing.level}</b></p>
+          <p>Mining level: <b>{emerald.skills.mining.level}</b></p>
+          <p>Herblore level: <b>{emerald.skills.herblore.level}</b></p>
+          <p>Agility level: <b>{emerald.skills.agility.level}</b></p>
+          <p>Thieving level: <b>{emerald.skills.thieving.level}</b></p>
+          <p>Slayer level: <b>{emerald.skills.slayer.level}</b></p>
+          <p>Farming level: <b>{emerald.skills.farming.level}</b></p>
+          <p>Runecrafting level: <b>{emerald.skills.runecraft.level}</b></p>
+          <p>Hunter level: <b>{emerald.skills.hunter.level}</b></p>
+          <p>Construction level: <b>{emerald.skills.construction.level}</b></p>
         </Emerald>
 
         <YB>
           <Username>{yb.username}</Username>
           <p>Overall level: <b>{yb.skills.overall.level}</b></p>
+          <p>Attack level: <b>{yb.skills.attack.level}</b></p>
+          <p>Defence level: <b>{yb.skills.defence.level}</b></p>
+          <p>Strength level: <b>{yb.skills.strength.level}</b></p>
+          <p>Hitpoints level: <b>{yb.skills.hitpoints.level}</b></p>
+          <p>Ranged level: <b>{yb.skills.ranged.level}</b></p>
+          <p>Prayer level: <b>{yb.skills.prayer.level}</b></p>
+          <p>Magic level: <b>{yb.skills.magic.level}</b></p>
+          <p>Cooking level: <b>{yb.skills.cooking.level}</b></p>
+          <p>Woodcutting level: <b>{yb.skills.woodcutting.level}</b></p>
+          <p>Fletching level: <b>{yb.skills.fletching.level}</b></p>
+          <p>Fishing level: <b>{yb.skills.fishing.level}</b></p>
+          <p>Firemaking level: <b>{yb.skills.firemaking.level}</b></p>
+          <p>Crafting level: <b>{yb.skills.crafting.level}</b></p>
+          <p>Smithing level: <b>{yb.skills.smithing.level}</b></p>
+          <p>Mining level: <b>{yb.skills.mining.level}</b></p>
+          <p>Herblore level: <b>{yb.skills.herblore.level}</b></p>
+          <p>Agility level: <b>{yb.skills.agility.level}</b></p>
+          <p>Thieving level: <b>{yb.skills.thieving.level}</b></p>
+          <p>Slayer level: <b>{yb.skills.slayer.level}</b></p>
+          <p>Farming level: <b>{yb.skills.farming.level}</b></p>
+          <p>Runecrafting level: <b>{yb.skills.runecraft.level}</b></p>
+          <p>Hunter level: <b>{yb.skills.hunter.level}</b></p>
+          <p>Construction level: <b>{yb.skills.construction.level}</b></p>
         </YB>
 
       </Main>
