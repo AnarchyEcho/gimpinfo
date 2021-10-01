@@ -120,7 +120,7 @@ export default function Home({ echo, funfun, emerald, yb }) {
           <p>Overall level: <b>{echo.skills.overall.level}</b></p>
           <p>Attack level: <b>{echo.skills.attack.level}</b></p>
         </Echo>
-1
+
         <Funfun>
           <Username>{funfun.username}</Username>
           <p>Overall level: <b>{funfun.skills.overall.level}</b></p>
