@@ -89,12 +89,15 @@ export async function getStaticProps(context) {
 
 export default function Home({ echo, funfun, emerald, yb }) {
 
+
+
   return (
     <Container>
       <Head>
         <title>GIMP Info</title>
         <meta name="description" content="Created by Echo and Tom" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/GimIconTransparent.png" />
+        <meta property="og:image" content="/GimIconTransparent.png" />
       </Head>
 
         <Banner>
