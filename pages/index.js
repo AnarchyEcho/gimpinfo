@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Head from 'next/head'
 import { Hiscores } from 'oldschooljs'
 
+import HiScore from '../Components/HiScore'
+
 const Container = styled.div`
   min-height: 100vh;
   height: 100vh;
@@ -69,8 +71,7 @@ const Footer = styled.div`
 
 export async function getStaticProps(context) {
   const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
-  const skills =  skillsRes.json()
-  console.log(skills)
+  const skills =  await skillsRes.json()
 
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
   const echo = JSON.parse(JSON.stringify(echoRes))
@@ -89,12 +90,13 @@ export async function getStaticProps(context) {
       echo,
       funfun,
       emerald,
-      yb
+      yb,
+      skills
     },
   }
 }
 
-export default function Home({ echo, funfun, emerald, yb }) {
+export default function Home({ echo, funfun, emerald, yb, skills }) {
 
   return (
     <Container>
@@ -127,9 +129,7 @@ export default function Home({ echo, funfun, emerald, yb }) {
         </Funfun>
 
         <Emerald>
-          <Username>{emerald.username}</Username>
-          <p>Overall level: <b>{emerald.skills.overall.level}</b></p>
-          <Image src='https://oldschool.runescape.wiki/images/8/86/Agility_icon.png' alt="OSRS Banner" width="50" height="50" />
+          <HiScore emerald={emerald} skills={skills}/>
         </Emerald>
 
         <YB>
