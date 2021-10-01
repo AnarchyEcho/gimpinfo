@@ -7,16 +7,15 @@ const Container = styled.div`
   min-height: 100vh;
   height: 100vh;
   width: 100%;
-  display: grid; 
-  grid-auto-columns: 1fr; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 0.5fr 0.1fr 1fr 0.1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.1fr 1fr 0.1fr;
+  gap: 0px 0px;
+  grid-template-areas:
     "Banner"
     "Title"
     "Main"
-    "Footer"; 
+    "Footer";
 `
 const Main = styled.div`
   width: 100%;
@@ -58,7 +57,7 @@ const YB = styled.div`
   grid-area: YB;
 `
 const Footer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100px;
   border-top: 1px solid #f5f5f5;
   display: flex;
@@ -69,7 +68,7 @@ const Footer = styled.div`
 
 export async function getStaticProps(context) {
   const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
-  const skills =  skillsRes.json()
+  const skills =  await skillsRes.json()
   console.log(skills)
 
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
@@ -119,6 +118,28 @@ export default function Home({ echo, funfun, emerald, yb }) {
           <Username>{echo.username}</Username>
           <p>Overall level: <b>{echo.skills.overall.level}</b></p>
           <p>Attack level: <b>{echo.skills.attack.level}</b></p>
+          <p>Defence level: <b>{echo.skills.defence.level}</b></p>
+          <p>Strength level: <b>{echo.skills.strength.level}</b></p>
+          <p>Hitpoints level: <b>{echo.skills.hitpoints.level}</b></p>
+          <p>Ranged level: <b>{echo.skills.ranged.level}</b></p>
+          <p>Prayer level: <b>{echo.skills.prayer.level}</b></p>
+          <p>Magic level: <b>{echo.skills.magic.level}</b></p>
+          <p>Cooking level: <b>{echo.skills.cooking.level}</b></p>
+          <p>Woodcutting level: <b>{echo.skills.woodcutting.level}</b></p>
+          <p>Fletching level: <b>{echo.skills.fletching.level}</b></p>
+          <p>Fishing level: <b>{echo.skills.fishing.level}</b></p>
+          <p>Firemaking level: <b>{echo.skills.firemaking.level}</b></p>
+          <p>Crafting level: <b>{echo.skills.crafting.level}</b></p>
+          <p>Smithing level: <b>{echo.skills.smithing.level}</b></p>
+          <p>Mining level: <b>{echo.skills.mining.level}</b></p>
+          <p>Herblore level: <b>{echo.skills.herblore.level}</b></p>
+          <p>Agility level: <b>{echo.skills.agility.level}</b></p>
+          <p>Thieving level: <b>{echo.skills.thieving.level}</b></p>
+          <p>Slayer level: <b>{echo.skills.slayer.level}</b></p>
+          <p>Farming level: <b>{echo.skills.farming.level}</b></p>
+          <p>Runecrafting level: <b>{echo.skills.runecraft.level}</b></p>
+          <p>Hunter level: <b>{echo.skills.hunter.level}</b></p>
+          <p>Construction level: <b>{echo.skills.construction.level}</b></p>
         </Echo>
 
         <Funfun>
