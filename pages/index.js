@@ -89,13 +89,15 @@ export async function getStaticProps(context) {
 
 export default function Home({ echo, funfun, emerald, yb }) {
 
+
+
   return (
     <Container>
       <Head>
         <title>GIMP Info</title>
         <meta name="description" content="Created by Echo and Tom" />
-        <link rel="icon" href="https://oldschool.runescape.wiki/images/0/09/Ironman_chat_badge.png" />
-        <meta property="og:image" content="https://oldschool.runescape.wiki/images/0/09/Ironman_chat_badge.png" />
+        <link rel="icon" href="/GimIconTransparent.png" />
+        <meta property="og:image" content="/GimIconTransparent.png" />
       </Head>
 
         <Banner>
