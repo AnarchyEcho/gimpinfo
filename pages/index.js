@@ -66,16 +66,28 @@ const Footer = styled.div`
 
 export async function getStaticProps(context) {
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
-  const echo = JSON.stringify(echoRes.skills.overall.level)
+  const echo = JSON.parse(JSON.stringify(echoRes))
+
+  const funfunRes = await Hiscores.fetch(`emerald12`)
+  const funfun = JSON.parse(JSON.stringify(funfunRes))
+
+  const emeraldRes = await Hiscores.fetch(`emerald12`)
+  const emerald = JSON.parse(JSON.stringify(emeraldRes))
+
+  const ybRes = await Hiscores.fetch(`yb mad`)
+  const yb = JSON.parse(JSON.stringify(ybRes))
 
   return {
     props: {
       echo,
+      funfun,
+      emerald,
+      yb
     },
   }
 }
 
-export default function Home({ echo }) {
+export default function Home({ echo, funfun, emerald, yb }) {
 
   return (
     <Container>
@@ -97,7 +109,7 @@ export default function Home({ echo }) {
 
         <Echo>
           <h3>Echo GIM</h3>
-          <p>Overall level: <b>{echo}</b></p>
+          <p>Overall level: <b>{echo.skills.overall.level}</b></p>
         </Echo>
 
         <Funfun>
