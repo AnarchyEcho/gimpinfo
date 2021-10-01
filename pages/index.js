@@ -86,7 +86,7 @@ export default function Home({ echo }) {
       </Head>
 
         <Banner>
-          <Image src='https://www.runescape.com/img/rsp777/title2/rslogo3.png' alt="OSRS Banner" width="700" height="200" />
+          <Image src='https://www.runescape.com/img/rsp777/title2/rslogo3.png' alt="OSRS Banner" width="1000" height="200" />
         </Banner>
 
         <Title>
