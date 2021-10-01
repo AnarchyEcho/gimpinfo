@@ -12,7 +12,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.5fr 0.1fr 1fr 0.1fr;
-  gap: 0px 0px;
+  gap: 10px 0px;
   grid-template-areas:
     "Banner"
     "Title"
@@ -23,12 +23,11 @@ const Main = styled.div`
   width: 100%;
   display: grid;
   grid-auto-columns: 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    "Echo Funfun Emerald YB";
-  justify-items: center;
+    "Echo Funfun Emerald YB Fixi";
 `
 const Banner = styled.div`
   justify-self: center;
@@ -53,10 +52,15 @@ const Funfun = styled.div`
 const Emerald = styled.div`
   text-align: center;
   grid-area: Emerald;
+  color: #000;
 `
 const YB = styled.div`
   text-align: center;
   grid-area: YB;
+`
+const Fixi = styled.div`
+  text-align: center;
+  grid-area: Fixi;
 `
 const Footer = styled.div`
   width: 100%;
@@ -85,18 +89,22 @@ export async function getStaticProps(context) {
   const ybRes = await Hiscores.fetch(`yb ironmad`)
   const yb = JSON.parse(JSON.stringify(ybRes))
 
+  const fixiRes = await Hiscores.fetch(`skolebolle`)
+  const fixi = JSON.parse(JSON.stringify(fixiRes))
+
   return {
     props: {
       echo,
       funfun,
       emerald,
       yb,
+      fixi,
       skills
     },
   }
 }
 
-export default function Home({ echo, funfun, emerald, yb, skills }) {
+export default function Home({ echo, funfun, emerald, yb, fixi, skills }) {
 
   return (
     <Container>
@@ -204,6 +212,34 @@ export default function Home({ echo, funfun, emerald, yb, skills }) {
           <p>Hunter level: <b>{yb.skills.hunter.level}</b></p>
           <p>Construction level: <b>{yb.skills.construction.level}</b></p>
         </YB>
+
+        <Fixi>
+          <Username>{fixi.username}</Username>
+          <p>Overall level: <b>{fixi.skills.overall.level}</b></p>
+          <p>Attack level: <b>{fixi.skills.attack.level}</b></p>
+          <p>Defence level: <b>{fixi.skills.defence.level}</b></p>
+          <p>Strength level: <b>{fixi.skills.strength.level}</b></p>
+          <p>Hitpoints level: <b>{fixi.skills.hitpoints.level}</b></p>
+          <p>Ranged level: <b>{fixi.skills.ranged.level}</b></p>
+          <p>Prayer level: <b>{fixi.skills.prayer.level}</b></p>
+          <p>Magic level: <b>{fixi.skills.magic.level}</b></p>
+          <p>Cooking level: <b>{fixi.skills.cooking.level}</b></p>
+          <p>Woodcutting level: <b>{fixi.skills.woodcutting.level}</b></p>
+          <p>Fletching level: <b>{fixi.skills.fletching.level}</b></p>
+          <p>Fishing level: <b>{fixi.skills.fishing.level}</b></p>
+          <p>Firemaking level: <b>{fixi.skills.firemaking.level}</b></p>
+          <p>Crafting level: <b>{fixi.skills.crafting.level}</b></p>
+          <p>Smithing level: <b>{fixi.skills.smithing.level}</b></p>
+          <p>Mining level: <b>{fixi.skills.mining.level}</b></p>
+          <p>Herblore level: <b>{fixi.skills.herblore.level}</b></p>
+          <p>Agility level: <b>{fixi.skills.agility.level}</b></p>
+          <p>Thieving level: <b>{fixi.skills.thieving.level}</b></p>
+          <p>Slayer level: <b>{fixi.skills.slayer.level}</b></p>
+          <p>Farming level: <b>{fixi.skills.farming.level}</b></p>
+          <p>Runecrafting level: <b>{fixi.skills.runecraft.level}</b></p>
+          <p>Hunter level: <b>{fixi.skills.hunter.level}</b></p>
+          <p>Construction level: <b>{fixi.skills.construction.level}</b></p>
+        </Fixi>
 
       </Main>
 

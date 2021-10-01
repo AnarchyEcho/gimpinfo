@@ -8,8 +8,8 @@ const Container = styled.div`
     background-image: url('https://www.runescape.com/img/rsp777/hiscores/scroll_middle.gif');
     background-repeat: repeat-y;
     background-size:100% auto;
-    height:fit-content;
-    position:relative;
+    height: 100%;
+    overflow-y: hidden;
 `
 export default function HiScore(props) {
 
