@@ -1,6 +1,6 @@
 export default function handler(req, res) {
     res.status(200).json(
-        
+        [
             {
                 agility: "/skill/agility.png"
             },
@@ -73,6 +73,6 @@ export default function handler(req, res) {
             {
               woodcutting: "/skill/woodcutting.png"
             }
-        
+        ]
         )
     }
