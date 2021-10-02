@@ -40,23 +40,18 @@ const Title = styled.div`
   grid-area: Title;
 `
 const Echo = styled.div`
-  text-align: center;
   grid-area: Echo;
 `
 const Funfun = styled.div`
-  text-align: center;
   grid-area: Funfun;
 `
 const Emerald = styled.div`
-  text-align: center;
   grid-area: Emerald;
 `
 const YB = styled.div`
-  text-align: center;
   grid-area: YB;
 `
 const Fixi = styled.div`
-  text-align: center;
   grid-area: Fixi;
 `
 const Footer = styled.div`
