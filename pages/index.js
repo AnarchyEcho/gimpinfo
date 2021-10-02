@@ -75,7 +75,6 @@ const Footer = styled.div`
 export async function getStaticProps(context) {
   const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
   const skills =  await skillsRes.json()
-  console.log(skills)
 
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
   const echo = JSON.parse(JSON.stringify(echoRes))
@@ -182,7 +181,7 @@ export default function Home({ echo, funfun, emerald, yb, fixi, skills }) {
         </Funfun>
 
         <Emerald>
-          <HiScore emerald={emerald} skills={skills} />
+          <HiScore player={emerald} skills={skills} />
         </Emerald>
 
         <YB>
