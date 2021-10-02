@@ -24,8 +24,7 @@ export default function HiScore(props) {
         <Container>
             <Username>{props.player.username}</Username>
 
-            {console.log(props.player.skills.agility.level),
-            skillsArray.map( x =>
+            {skillsArray.map( x =>
                 <Stats key={x}><Image src = {props.skills[x].picture} alt ={x} width="15px" height="15px" /> {x} level: <b> {props.player.skills[x].level} </b></Stats>
             )}
         </Container>
