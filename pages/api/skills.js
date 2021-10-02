@@ -95,6 +95,6 @@ export default function handler(req, res) {
         construction: {
             picture: "/skill/construction.png",
             name: "construction"
-        },
+        }
     })
 }
