@@ -14,6 +14,7 @@ const Container = styled.div`
 const Stats = styled.p`
     text-transform: capitalize;
     margin-left: 30%;
+    margin-right: 20%;
 `
 
 export default function HiScore(props) {
