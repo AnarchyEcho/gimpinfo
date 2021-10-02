@@ -22,7 +22,7 @@ export default function HiScore(props) {
 
             {console.log(props.player.skills.agility.level),
             skillsArray.map( x =>
-                <p key={x}><Image src = {props.skills[x].picture} alt ={x}/>{x} level: {props.player.skills[x].level}  <b></b></p>
+                <p key={x}><Image src = {props.skills[x].picture} alt ={x} width="15px" height="15px" />{x} level: {props.player.skills[x].level}  <b></b></p>
             )}
         </Container>
     )

@@ -38,9 +38,6 @@ const Title = styled.div`
   justify-self: center;
   grid-area: Title;
 `
-const Username = styled.h3`
-  text-transform: capitalize;
-`
 const Echo = styled.div`
   text-align: center;
   grid-area: Echo;
