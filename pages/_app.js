@@ -20,6 +20,20 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   }
 
+  /* Scrollbar css */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #20202000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #F0CE97;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #F0CE97;
+  }
+
 `
 
 
