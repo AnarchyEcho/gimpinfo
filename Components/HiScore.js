@@ -11,6 +11,10 @@ const Container = styled.div`
     height: 100%;
     overflow-y: hidden;
 `
+const Stats = styled.p`
+    text-transform: capitalize;
+`
+
 export default function HiScore(props) {
 
     const skillsArray = Object.keys(props.skills)
@@ -22,7 +26,7 @@ export default function HiScore(props) {
 
             {console.log(props.player.skills.agility.level),
             skillsArray.map( x =>
-                <p key={x}><Image src = {props.skills[x].picture} alt ={x} width="15px" height="15px" />{x} level: {props.player.skills[x].level}  <b></b></p>
+                <Stats key={x}><Image src = {props.skills[x].picture} alt ={x} width="15px" height="15px" /> {x} level: <b> {props.player.skills[x].level} </b></Stats>
             )}
         </Container>
     )

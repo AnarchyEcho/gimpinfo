@@ -28,6 +28,7 @@ const Main = styled.div`
   gap: 0px 0px;
   grid-template-areas:
     "Echo Funfun Emerald YB Fixi";
+  color: #000;
 `
 const Banner = styled.div`
   justify-self: center;
@@ -49,7 +50,6 @@ const Funfun = styled.div`
 const Emerald = styled.div`
   text-align: center;
   grid-area: Emerald;
-  color: #000;
 `
 const YB = styled.div`
   text-align: center;
