@@ -1,6 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/client";
 
-export default function Home() {
+export default function Login() {
     const [session] = useSession();
     return (
         <div>
