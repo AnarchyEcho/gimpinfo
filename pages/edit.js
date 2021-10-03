@@ -1,10 +1,23 @@
-import {useSession} from 'next-auth/client'
+import { useSession, signIn, signOut } from "next-auth/client";
 import Link from 'next/link'
-
-import Login from '../Components/Login'
 
 export default function Edit() {
   const [session, loading] = useSession()
+
+  const Login =
+        <div>
+            {!session ? (
+                <>
+                    <button onClick={() => signIn("github")}>
+                        Sign in with Github
+                    </button>
+                </>
+            ) : (
+                <>
+                    <button onClick={signOut}>Logout</button> <br />
+                </>
+            )}
+        </div>;
 
   if (loading) {
     return (
@@ -19,7 +32,7 @@ export default function Edit() {
       <div>
         <Link href="/">Home</Link>
         <p>You are not logged in.</p>
-        <Login />
+        {Login}
       </div>
     )
   }
@@ -28,7 +41,7 @@ export default function Edit() {
     <>
       <Link href="/">Home</Link>
       <p>You are logged in</p>
-      <Login />
+      {Login}
     </>
   )
 }
