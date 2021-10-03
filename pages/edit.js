@@ -1,7 +1,7 @@
 import {useSession} from 'next-auth/client'
 import Link from 'next/link'
 
-import Login from '../components/Login'
+import Login from '../Components/Login'
 
 export default function Edit() {
   const [session, loading] = useSession()
