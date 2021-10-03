@@ -2,7 +2,7 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
 
-export default (req, res) => (
+export default function auth (req, res) {
     NextAuth(req, res, {
         providers: [
             Providers.GitHub({
@@ -20,4 +20,4 @@ export default (req, res) => (
                 return "/edit";
             },
         },
-    }));
+    })};
