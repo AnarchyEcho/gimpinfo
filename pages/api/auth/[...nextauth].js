@@ -17,7 +17,7 @@ export default (req, res) =>
         },
         callbacks: {
             async redirect(url, baseUrl) {
-                return "/";
+                return "/edit";
             },
         },
     });

@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 import Head from 'next/head'
+import Link from 'next/link'
 import { Hiscores } from 'oldschooljs'
 
 import HiScore from '../Components/HiScore'
-import Login from '../Components/login'
 
 const Container = styled.div`
   min-height: 100vh;
@@ -70,19 +70,19 @@ export async function getStaticProps(context) {
   const skills =  await skillsRes.json()
 
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
-  const echo = JSON.parse(JSON.stringify(echoRes))
+  const echo = await JSON.parse(JSON.stringify(echoRes))
 
   const funfunRes = await Hiscores.fetch(`agentfunfun`)
-  const funfun = JSON.parse(JSON.stringify(funfunRes))
+  const funfun = await JSON.parse(JSON.stringify(funfunRes))
 
   const emeraldRes = await Hiscores.fetch(`emerald12`)
-  const emerald = JSON.parse(JSON.stringify(emeraldRes))
+  const emerald = await JSON.parse(JSON.stringify(emeraldRes))
 
   const ybRes = await Hiscores.fetch(`yb ironmad`)
-  const yb = JSON.parse(JSON.stringify(ybRes))
+  const yb = await JSON.parse(JSON.stringify(ybRes))
 
   const fixiRes = await Hiscores.fetch(`skolebolle`)
-  const fixi = JSON.parse(JSON.stringify(fixiRes))
+  const fixi = await JSON.parse(JSON.stringify(fixiRes))
 
   return {
     props: {
@@ -113,12 +113,11 @@ export default function Home({ echo, funfun, emerald, yb, fixi, skills }) {
 
         <Title>
           <h1>Names of the degens</h1>
+          <Link href="/edit" >Quests</Link>
         </Title>
 
       <Main>
 
-      <Login />
-      
         <Echo>
           <HiScore player={echo} skills={skills} />
         </Echo>
