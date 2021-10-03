@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { Hiscores } from 'oldschooljs'
 
 import HiScore from '../Components/HiScore'
+import Login from '../Components/login'
 
 const Container = styled.div`
   min-height: 100vh;
@@ -116,6 +117,8 @@ export default function Home({ echo, funfun, emerald, yb, fixi, skills }) {
 
       <Main>
 
+      <Login />
+      
         <Echo>
           <HiScore player={echo} skills={skills} />
         </Echo>
