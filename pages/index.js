@@ -67,22 +67,22 @@ const Footer = styled.div`
 
 export async function getStaticProps(context) {
   const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
-  const skills =  await skillsRes.json()
+  const skills = await skillsRes.json()
 
   const echoRes = await Hiscores.fetch(`anarchyrunic`)
-  const echo = await JSON.parse(JSON.stringify(echoRes))
+  const echo = JSON.parse(JSON.stringify(echoRes))
 
   const funfunRes = await Hiscores.fetch(`agentfunfun`)
-  const funfun = await JSON.parse(JSON.stringify(funfunRes))
+  const funfun = JSON.parse(JSON.stringify(funfunRes))
 
   const emeraldRes = await Hiscores.fetch(`emerald12`)
-  const emerald = await JSON.parse(JSON.stringify(emeraldRes))
+  const emerald = JSON.parse(JSON.stringify(emeraldRes))
 
   const ybRes = await Hiscores.fetch(`yb ironmad`)
-  const yb = await JSON.parse(JSON.stringify(ybRes))
+  const yb = JSON.parse(JSON.stringify(ybRes))
 
   const fixiRes = await Hiscores.fetch(`skolebolle`)
-  const fixi = await JSON.parse(JSON.stringify(fixiRes))
+  const fixi = JSON.parse(JSON.stringify(fixiRes))
 
   return {
     props: {

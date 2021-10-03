@@ -10,7 +10,6 @@ export default function Edit() {
     return (
     <div>
       <p>Loading...</p>
-      <Link href="/" >Home</Link>
     </div>
     )
   }
@@ -18,8 +17,8 @@ export default function Edit() {
   if (!session) {
     return (
       <div>
+        <Link href="/">Home</Link>
         <p>You are not logged in.</p>
-        <Link href="/" >Home</Link>
         <Login />
       </div>
     )
@@ -27,10 +26,8 @@ export default function Edit() {
 
   return (
     <>
-      <p>
-        You are logged in as
-      </p>
-      <Link href="/" >Home</Link>
+      <Link href="/">Home</Link>
+      <p>You are logged in</p>
       <Login />
     </>
   )
