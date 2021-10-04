@@ -112,7 +112,7 @@ export default function Home({ echo, funfun, emerald, yb, fixi, skills }) {
         </Banner>
 
         <Title>
-          <h1>Names of the degens</h1>
+          <h1>Group name here</h1>
           <Link href="/edit" >Quests</Link>
         </Title>
 
