@@ -32,10 +32,21 @@ const StatsImage = styled.img`
     width: 25px;
     height: 25px;
 `
+const HiScoreLine = styled.hr`
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    border-left: 0;
+    height: 25px;
+    background-image: url('https://www.runescape.com/img/rsp777/hiscores/scroll_middle.gif');
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+`
 
 export default function HiScore(props) {
 
     const skillsArray = Object.keys(props.skills)
+    const killsArray = Object.keys(props.player.bossRecords)
 
     return (
 
@@ -48,6 +59,11 @@ export default function HiScore(props) {
                     <StatsText>{x} level: <b> {props.player.skills[x].level} </b></StatsText>
                 </Stats>
             )}
+            <HiScoreLine />
+            {killsArray.map( x =>
+                <Stats key={x}>
+                    {props.player.bossRecords[x].score >= 0 ? <StatsText>{x} KC: <b> {props.player.bossRecords[x].score} </b></StatsText> : null}
+                </Stats>)}
         </Container>
     )
 }
