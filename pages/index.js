@@ -113,7 +113,7 @@ export default function Home({ echo, funfun, emerald, yb, fixi, skills }) {
 
         <Title>
           <h1>Group name here</h1>
-          <Link href="/edit" >Quests</Link>
+          <Link href="/edit" ><a title="Quests Editor">Quests</a></Link>
         </Title>
 
       <Main>
