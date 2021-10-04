@@ -46,6 +46,7 @@ const HiScoreLine = styled.hr`
 export default function HiScore(props) {
 
     const skillsArray = Object.keys(props.skills)
+    const cluesArray = Object.keys(props.player.clues)
     const killsArray = Object.keys(props.player.bossRecords)
 
     return (
@@ -59,7 +60,16 @@ export default function HiScore(props) {
                     <StatsText>{x} level: <b> {props.player.skills[x].level} </b></StatsText>
                 </Stats>
             )}
+
             <HiScoreLine />
+
+            {cluesArray.map( x =>
+                <Stats key={x}>
+                    {props.player.clues[x].score >= 0 ? <StatsText>{x} Clues: <b> {props.player.clues[x].score} </b></StatsText> : null}
+                </Stats>)}
+
+            <HiScoreLine />
+
             {killsArray.map( x =>
                 <Stats key={x}>
                     {props.player.bossRecords[x].score >= 0 ? <StatsText>{x} KC: <b> {props.player.bossRecords[x].score} </b></StatsText> : null}
