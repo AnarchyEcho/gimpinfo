@@ -1,9 +1,11 @@
 import styled from 'styled-components'
-import Image from 'next/image'
 
 const Username = styled.h3`
   text-transform: capitalize;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 1.1em;
+    }
 `
 const Container = styled.div`
     background-image: url('https://www.runescape.com/img/rsp777/hiscores/scroll_middle.gif');
@@ -19,6 +21,10 @@ const Stats = styled.div`
     margin-right: 20%;
     width: 100%;
     height: 50%;
+    @media (max-width: 768px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
 `
 const StatsText = styled.p`
     text-indent: 3px;
