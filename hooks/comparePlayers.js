@@ -36,12 +36,11 @@ export default function compare(player1, player2, player3, player4, player5, ski
             if (player.skills[skillsArray[i]].xp === highest) {highestPlayer = player.username}
          });
          highestPlayerSkills.push({
-            name:`${skillsArray[i]}`,
+            [skillsArray[i]] : {
             xp:`${highest}`,
-            player:`${highestPlayer}`
-         })
+            player:`${highestPlayer}`}})
          }
-         console.log(highestPlayerSkills)
+         return {highestPlayerSkills}
 }
 findMaxStats();
 }
