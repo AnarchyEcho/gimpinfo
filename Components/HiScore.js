@@ -11,10 +11,21 @@ const Container = styled.div`
     background-size: 100% auto;
     overflow-y: hidden;
 `
-const Stats = styled.p`
+const Stats = styled.div`
     text-transform: capitalize;
+    display: flex;
+    align-items: center;
     margin-left: 30%;
     margin-right: 20%;
+    width: 100%;
+    height: 50%;
+`
+const StatsText = styled.p`
+    text-indent: 3px;
+`
+const StatsImage = styled.img`
+    width: 25px;
+    height: 25px;
 `
 
 export default function HiScore(props) {
@@ -27,7 +38,10 @@ export default function HiScore(props) {
             <Username>{props.player.username}</Username>
 
             {skillsArray.map( x =>
-                <Stats key={x}><Image src = {props.skills[x].picture} alt ={x} width="17px" height="17px" /> {x} level: <b> {props.player.skills[x].level} </b></Stats>
+                <Stats key={x}>
+                    <StatsImage src={props.skills[x].picture} alt={x} />
+                    <StatsText>{x} level: <b> {props.player.skills[x].level} </b></StatsText>
+                </Stats>
             )}
         </Container>
     )
