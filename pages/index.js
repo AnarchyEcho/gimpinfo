@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Hiscores } from 'oldschooljs'
-import compare from '../hooks/comparePlayers'
+const {compare} = require('../hooks/comparePlayers')
 
 import HiScore from '../Components/HiScore'
 
@@ -85,6 +85,10 @@ export async function getStaticProps(context) {
   const fixiRes = await Hiscores.fetch(`skolebolle`)
   const fixi = JSON.parse(JSON.stringify(fixiRes))
 
+  let something = compare(echo, funfun, emerald, yb, fixi, skills) 
+  console.log(something)
+  
+
   return {
     props: {
       echo,
@@ -98,7 +102,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ echo, funfun, emerald, yb, fixi, skills }) {
-  compare(echo, funfun, emerald, yb, fixi, skills)
+  
 
   return (
     <Container>
