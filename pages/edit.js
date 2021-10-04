@@ -1,6 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/client";
 import Link from 'next/link'
-import Head from 'next/Head'
+import Head from 'next/head'
 import { QuestTool } from "osrs-quest-tool";
 
 export default function Edit() {
