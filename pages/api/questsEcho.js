@@ -5,7 +5,7 @@ export default function handler(req, res) {
                 name: "A Soul's Bane",
                     shortname: "aSoulsBane",
                         url: "https//oldschool.runescape.wiki/w/A_Soul%s_Bane",
-                            completed: ""
+                            completed: "lol"
                 },
             atailoftwocats: {
                 name: "A Tail of Two Cats",
