@@ -68,7 +68,6 @@ export default function Edit({ questsEcho, questsArrayEcho, questsFunfun, quests
   for (let i = 0; i < questsArrayFixi.length; i++) {
     questNamesFixi.push(questsFixi.fixi[questsArrayFixi[i]].name)
   }
-console.log(questsArrayEcho[0])
 
   const Header = 
         <Head>
