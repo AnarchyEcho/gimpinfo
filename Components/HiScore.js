@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, {ThemeProvider} from 'styled-components'
 
 const Username = styled.h3`
   text-transform: capitalize;
@@ -27,6 +27,8 @@ const Stats = styled.div`
 `
 const StatsText = styled.p`
     text-indent: 3px;
+    color:${props => props.theme.color};
+    font-weight: ${props => props.theme.weight};
 `
 const StatsImage = styled.img`
     width: 25px;
@@ -48,6 +50,8 @@ export default function HiScore(props) {
     const skillsArray = Object.keys(props.skills)
     const cluesArray = Object.keys(props.player.clues)
     const killsArray = Object.keys(props.player.bossRecords)
+    const theme = {color:"green", weight: "bold"}
+    const noneTheme = {color:"inherit", weight: "inherit"}
 
     return (
 
@@ -55,10 +59,12 @@ export default function HiScore(props) {
             <Username>{props.player.username}</Username>
 
             {skillsArray.map( x =>
-                <Stats key={x}>
-                    <StatsImage src={props.skills[x].picture} alt={x} />
-                    <StatsText>{x} level: <b> {props.player.skills[x].level} </b></StatsText>
-                </Stats>
+                <ThemeProvider theme={props.highestPlayer[x].player === props.player.username ? theme : noneTheme}>
+                    <Stats key={x}>
+                        <StatsImage src={props.skills[x].picture} alt={x} />
+                        <StatsText>{x} level: <b> {props.player.skills[x].level} </b></StatsText>
+                    </Stats>
+                </ThemeProvider>
             )}
 
             <HiScoreLine />

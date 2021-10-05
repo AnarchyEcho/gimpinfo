@@ -27,7 +27,7 @@ function compare(player1, player2, player3, player4, player5, skills) {
    function findMaxStats() {
       let highestPlayerSkills = {};
 
-      for (let i = 0; i < allPlayersXP[0].length - 1; i++) {
+      for (let i = 0; i < allPlayersXP[0].length; i++) {
          let highestPlayer = ''
 
          const highest = (Math.max(player1XP[i], player2XP[i], player3XP[i], player4XP[i], player5XP[i]))
@@ -37,7 +37,7 @@ function compare(player1, player2, player3, player4, player5, skills) {
             }
          );
 
-      for (let x = 0; x < skillsArray.length - 1; x++) {
+      for (let x = 0; x < skillsArray.length; x++) {
          highestPlayerSkills[skillsArray[i]] = {
             level: `${highestPlayer.skills[skillsArray[i]].level}`,
             xp: `${highest}`,
