@@ -117,8 +117,11 @@ console.log(questsArrayEcho[0])
     <>
       {Header}
       <Link href="/">Home</Link>
+
       {session.user.name === "KodeAndre", "Tomkhcoding" ? <p>{session.user.name} is logged in</p> : null}
+
       {Login}
+
       {session.user.name === "KodeAndre" ? <div>
         {questNamesEcho.map( (x, i) =>
           <div key={x}>
@@ -126,34 +129,39 @@ console.log(questsArrayEcho[0])
           </div>
         )}
       </div> : null}
+
       {session.user.name === "Funfun" ? <div>
         {questNamesFunfun.map( x =>
           <div key={x}>
-              <p>{x}</p>
+              <p>{x} Completed: {questsFunfun.funfun[questsArrayFunfun[i]].completed}</p>
           </div>
         )}
       </div> : null}
+
       {session.user.name === "Tomkhcoding" ? <div>
         {questNamesEmerald.map( x =>
           <div key={x}>
-              <p>{x}</p>
+              <p>{x} Completed: {questsEmerald.emerald[questsArrayEmerald[i]].completed}</p>
           </div>
         )}
       </div> : null}
+
       {session.user.name === "Ybmad" ? <div>
         {questNamesYb.map( x =>
           <div key={x}>
-              <p>{x}</p>
+              <p>{x} Completed: {questsYb.yb[questsArrayYb[i]].completed}</p>
           </div>
         )}
       </div> : null}
+
       {session.user.name === "Fixified" ? <div>
         {questNamesFixi.map( x =>
           <div key={x}>
-              <p>{x}</p>
+              <p>{x} Completed: {questsFixi.fixi[questsArrayFixi[i]].completed}</p>
           </div>
         )}
       </div> : null}
+      
     </>
   )
 }
