@@ -1,5 +1,5 @@
 export default function handler(req, res) {
-    res.status().json({
+    res.status(200).json({
 asoulsbane: {
     name: "A Soul's Bane",
         shortname: "aSoulsBane",
