@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Hiscores } from 'oldschooljs'
-const {compare} = require('../hooks/comparePlayers')
+const { compare } = require('../hooks/comparePlayers')
 
 import HiScore from '../Components/HiScore'
 
@@ -20,7 +20,7 @@ const Container = styled.div`
     "Title"
     "Main"
     "Footer";
-`
+  `
 const Main = styled.div`
   width: 100%;
   display: grid;
@@ -29,7 +29,7 @@ const Main = styled.div`
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    "Echo Funfun Emerald YB Fixi";
+    ". . . . .";
   color: #000;
 `
 const Banner = styled.div`
@@ -41,20 +41,8 @@ const Title = styled.div`
   justify-self: center;
   grid-area: Title;
 `
-const Echo = styled.div`
-  grid-area: Echo;
-`
-const Funfun = styled.div`
-  grid-area: Funfun;
-`
-const Emerald = styled.div`
-  grid-area: Emerald;
-`
-const YB = styled.div`
-  grid-area: YB;
-`
-const Fixi = styled.div`
-  grid-area: Fixi;
+const Player = styled.div`
+
 `
 const Footer = styled.div`
   width: 100%;
@@ -85,24 +73,21 @@ export async function getStaticProps(context) {
   const fixiRes = await Hiscores.fetch(`skolebolle`)
   const fixi = JSON.parse(JSON.stringify(fixiRes))
 
-  let something = compare(echo, funfun, emerald, yb, fixi, skills) 
-  console.log(something)
-  
+  const playerArray = [echo, funfun, emerald, yb, fixi]
+
+  let highestPlayer = compare(...playerArray, skills)
 
   return {
     props: {
-      echo,
-      funfun,
-      emerald,
-      yb,
-      fixi,
-      skills
+      playerArray,
+      skills,
+      highestPlayer
     },
   }
 }
 
-export default function Home({ echo, funfun, emerald, yb, fixi, skills }) {
-  
+export default function Home({ playerArray, skills, highestPlayer }) {
+
 
   return (
     <Container>
@@ -113,46 +98,32 @@ export default function Home({ echo, funfun, emerald, yb, fixi, skills }) {
         <meta property="og:image" content="/GimIconTransparent.png" />
       </Head>
 
-        <Banner>
-          <Image src='https://www.runescape.com/img/rsp777/title2/rslogo3.png' alt="OSRS Banner" width="1000" height="200" />
-        </Banner>
+      <Banner>
+        <Image src='https://www.runescape.com/img/rsp777/title2/rslogo3.png' alt="OSRS Banner" width="1000" height="200" />
+      </Banner>
 
-        <Title>
-          <h1>Group name here</h1>
-          <Link href="/edit" ><a title="Quests Editor">Quests</a></Link>
-        </Title>
+      <Title>
+        <h1>Group name here</h1>
+        <Link href="/edit" ><a title="Quests Editor">Quests</a></Link>
+      </Title>
 
       <Main>
 
-        <Echo>
-          <HiScore player={echo} skills={skills} />
-        </Echo>
-
-        <Funfun>
-          <HiScore player={funfun} skills={skills} />
-        </Funfun>
-
-        <Emerald>
-          <HiScore player={emerald} skills={skills} />
-        </Emerald>
-
-        <YB>
-          <HiScore player={yb} skills={skills} />
-        </YB>
-
-        <Fixi>
-          <HiScore player={fixi} skills={skills} />
-        </Fixi>
+        {playerArray.map(element =>
+          <Player key={element.username}>
+            <HiScore player={element} skills={skills} highestPlayer={highestPlayer} />
+          </Player>
+        )}
 
       </Main>
 
       <Footer>
-          <span>
-            Powered by 
-            <a href="https://github.com/KodeAndre" target="_blank" rel="noopener noreferrer"><b> Echo </b></a> 
-            and
-            <a href="https://github.com/Tomkhcoding" target="_blank" rel="noopener noreferrer"><b> Tom</b></a>
-          </span>
+        <span>
+          Powered by
+          <a href="https://github.com/KodeAndre" target="_blank" rel="noopener noreferrer"><b> Echo </b></a>
+          and
+          <a href="https://github.com/Tomkhcoding" target="_blank" rel="noopener noreferrer"><b> Tom</b></a>
+        </span>
       </Footer>
     </Container>
   )
