@@ -2,26 +2,73 @@ import { useSession, signIn, signOut } from "next-auth/client";
 import Link from 'next/link'
 import Head from 'next/head'
 
+
 export async function getStaticProps(context) {
-    const questsFetch = await fetch('https://gimpinfo.vercel.app/api/questsEcho')
-    const quests = await questsFetch.json()
-    const questsArray = Object.keys(quests.echo)
+   
+    const questsFetchEcho = await fetch(`https://gimpinfo.vercel.app/api/questsEcho`)
+    const questsEcho = await questsFetchEcho.json()
+    const questsArrayEcho = Object.keys(questsEcho.echo)
+
+    const questsFetchFunfun = await fetch(`https://gimpinfo.vercel.app/api/questsFunfun`)
+    const questsFunfun = await questsFetchFunfun.json()
+    const questsArrayFunfun = Object.keys(questsFunfun.funfun)
+
+    const questsFetchEmerald = await fetch(`https://gimpinfo.vercel.app/api/questsEmerald`)
+    const questsEmerald = await questsFetchEmerald.json()
+    const questsArrayEmerald = Object.keys(questsEmerald.emerald)
+
+    const questsFetchYb = await fetch(`https://gimpinfo.vercel.app/api/questsYb`)
+    const questsYb = await questsFetchYb.json()
+    const questsArrayYb = Object.keys(questsYb.yb)
+
+    const questsFetchFixi = await fetch(`https://gimpinfo.vercel.app/api/questsFixi`)
+    const questsFixi = await questsFetchFixi.json()
+    const questsArrayFixi = Object.keys(questsFixi.fixi)
 
     return {
         props: {
-            quests,
-            questsArray
+            questsEcho,
+            questsArrayEcho,
+            questsFunfun,
+            questsArrayFunfun,
+            questsEmerald,
+            questsArrayEmerald,
+            questsYb,
+            questsArrayYb,
+            questsFixi,
+            questsArrayFixi
         }
     }
 }
 
-export default function Edit({ quests, questsArray }) {
+export default function Edit({ questsEcho, questsArrayEcho, questsFunfun, questsArrayFunfun, questsEmerald, questsArrayEmerald, questsYb, questsArrayYb, questsFixi, questsArrayFixi }) {
   const [session, loading] = useSession()
 
-  let questNames = []
-  for (let i = 0; i < questsArray.length; i++) {
-    questNames.push(quests.echo[questsArray[i]].name)
+  let questNamesEcho = []
+  for (let i = 0; i < questsArrayEcho.length; i++) {
+    questNamesEcho.push(questsEcho.echo[questsArrayEcho[i]].name)
   }
+
+  let questNamesFunfun = []
+  for (let i = 0; i < questsArrayFunfun.length; i++) {
+    questNamesFunfun.push(questsFunfun.funfun[questsArrayFunfun[i]].name)
+  }
+
+  let questNamesEmerald = []
+  for (let i = 0; i < questsArrayEmerald.length; i++) {
+    questNamesEmerald.push(questsEmerald.emerald[questsArrayEmerald[i]].name)
+  }
+
+  let questNamesYb = []
+  for (let i = 0; i < questsArrayYb.length; i++) {
+    questNamesYb.push(questsYb.yb[questsArrayYb[i]].name)
+  }
+
+  let questNamesFixi = []
+  for (let i = 0; i < questsArrayFixi.length; i++) {
+    questNamesFixi.push(questsFixi.fixi[questsArrayFixi[i]].name)
+  }
+console.log(questsArrayEcho[0])
 
   const Header = 
         <Head>
@@ -70,13 +117,43 @@ export default function Edit({ quests, questsArray }) {
     <>
       {Header}
       <Link href="/">Home</Link>
-      <p>You are logged in</p>
+      {session.user.name === "KodeAndre", "Tomkhcoding" ? <p>{session.user.name} is logged in</p> : null}
       {Login}
-      {questNames.map( x =>
-        <div key={x}>
-            <p>{x}</p>
-        </div>
-      )}
+      {session.user.name === "KodeAndre" ? <div>
+        {questNamesEcho.map( (x, i) =>
+          <div key={x}>
+              <p>{x} Completed: {questsEcho.echo[questsArrayEcho[i]].completed}</p>
+          </div>
+        )}
+      </div> : null}
+      {session.user.name === "Funfun" ? <div>
+        {questNamesFunfun.map( x =>
+          <div key={x}>
+              <p>{x}</p>
+          </div>
+        )}
+      </div> : null}
+      {session.user.name === "Tomkhcoding" ? <div>
+        {questNamesEmerald.map( x =>
+          <div key={x}>
+              <p>{x}</p>
+          </div>
+        )}
+      </div> : null}
+      {session.user.name === "Ybmad" ? <div>
+        {questNamesYb.map( x =>
+          <div key={x}>
+              <p>{x}</p>
+          </div>
+        )}
+      </div> : null}
+      {session.user.name === "Fixified" ? <div>
+        {questNamesFixi.map( x =>
+          <div key={x}>
+              <p>{x}</p>
+          </div>
+        )}
+      </div> : null}
     </>
   )
 }

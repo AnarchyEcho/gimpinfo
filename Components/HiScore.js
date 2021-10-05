@@ -59,8 +59,8 @@ export default function HiScore(props) {
             <Username>{props.player.username}</Username>
 
             {skillsArray.map( x =>
-                <ThemeProvider theme={props.highestPlayer[x].player === props.player.username ? theme : noneTheme}>
-                    <Stats key={x}>
+                <ThemeProvider theme={props.highestPlayer[x].player === props.player.username ? theme : noneTheme} key={x}>
+                    <Stats>
                         <StatsImage src={props.skills[x].picture} alt={x} />
                         <StatsText>{x} level: <b> {props.player.skills[x].level} </b></StatsText>
                     </Stats>
