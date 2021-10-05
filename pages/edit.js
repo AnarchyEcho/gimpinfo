@@ -1,15 +1,27 @@
 import { useSession, signIn, signOut } from "next-auth/client";
 import Link from 'next/link'
 import Head from 'next/head'
-import { QuestTool } from "osrs-quest-tool";
 
-export default function Edit() {
+export async function getStaticProps(context) {
+    const questsFetch = await fetch('https://gimpinfo.vercel.app/api/questsEcho')
+    const quests = await questsFetch.json()
+    const questsArray = Object.keys(quests.echo)
+
+    return {
+        props: {
+            quests,
+            questsArray
+        }
+    }
+}
+
+export default function Edit({ quests, questsArray }) {
   const [session, loading] = useSession()
 
-  const tool = new QuestTool();
-  const toolJson = JSON.parse(JSON.stringify(tool));
-  const quests = Object.keys(toolJson.questObject);
-
+  let questNames = []
+  for (let i = 0; i < questsArray.length; i++) {
+    questNames.push(quests.echo[questsArray[i]].name)
+  }
 
   const Header = 
         <Head>
@@ -60,7 +72,7 @@ export default function Edit() {
       <Link href="/">Home</Link>
       <p>You are logged in</p>
       {Login}
-      {quests.map( x =>
+      {questNames.map( x =>
         <div key={x}>
             <p>{x}</p>
         </div>
