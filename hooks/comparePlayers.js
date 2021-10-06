@@ -24,30 +24,41 @@ function compare(player1, player2, player3, player4, player5, skills) {
    const allPlayers = [player1, player2, player3, player4, player5]
    const allPlayersXP = [player1XP, player2XP, player3XP, player4XP, player5XP]
 
-   function findMaxStats() {
-      let highestPlayerSkills = {};
+   function findStatOrder() {
+      let playerSkills = {};
 
       for (let i = 0; i < allPlayersXP[0].length; i++) {
          let highestPlayer = ''
-
+         let lowestPlayer = ''
+         
          const highest = (Math.max(player1XP[i], player2XP[i], player3XP[i], player4XP[i], player5XP[i]))
-
+         const lowest = (Math.min(player1XP[i], player2XP[i], player3XP[i], player4XP[i], player5XP[i]))
          allPlayers.forEach(player => {
+            
             if (player.skills[skillsArray[i]].xp === highest) { highestPlayer = player }
-            }
-         );
-
+            console.log(highestPlayer.username)
+            if (player.skills[skillsArray[i]].xp === lowest) { lowestPlayer = player }
+            console.log(lowestPlayer.username)
+         });
+         
       for (let x = 0; x < skillsArray.length; x++) {
-         highestPlayerSkills[skillsArray[i]] = {
-            level: `${highestPlayer.skills[skillsArray[i]].level}`,
-            xp: `${highest}`,
-            player: `${highestPlayer.username}`
+         playerSkills[skillsArray[i]] = {
+            highest: {
+               player: `${highestPlayer.username}`,
+               level: `${highestPlayer.skills[skillsArray[i]].level}`,
+               xp: `${highest}`
+            },
+            lowest: {
+               player: `${lowestPlayer.username}`,
+               level: `${lowestPlayer.skills[skillsArray[i]].level}`,
+               xp: `${lowest}`
+            }
          }
       }
    }
-      return highestPlayerSkills
+      return playerSkills
    }
-   return findMaxStats();
+   return findStatOrder();
 
 }
 

@@ -75,18 +75,18 @@ export async function getStaticProps(context) {
 
   const playerArray = [echo, funfun, emerald, yb, fixi]
 
-  let highestPlayer = compare(...playerArray, skills)
+  let playerSkills = compare(...playerArray, skills)
 
   return {
     props: {
       playerArray,
       skills,
-      highestPlayer
+      playerSkills
     },
   }
 }
 
-export default function Home({ playerArray, skills, highestPlayer }) {
+export default function Home({ playerArray, skills, playerSkills }) {
 
 
   return (
@@ -109,9 +109,9 @@ export default function Home({ playerArray, skills, highestPlayer }) {
 
       <Main>
 
-        {playerArray.map(element =>
-          <Player key={element.username}>
-            <HiScore player={element} skills={skills} highestPlayer={highestPlayer} />
+        {playerArray.map(player =>
+          <Player key={player.username}>
+            <HiScore player={player} skills={skills} playerSkills={playerSkills} />
           </Player>
         )}
 
