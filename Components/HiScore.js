@@ -51,7 +51,8 @@ export default function HiScore(props) {
     const cluesArray = Object.keys(props.player.clues)
     const killsArray = Object.keys(props.player.bossRecords)
     const theme = {color:"green", weight: "bold"}
-    const noneTheme = {color:"inherit", weight: "inherit"}
+    const badTheme = {color:"red", weight: "bold"}
+    const noneTheme = {color:"black", weight: "inherit"}
 
     return (
 
@@ -59,7 +60,7 @@ export default function HiScore(props) {
             <Username>{props.player.username}</Username>
 
             {skillsArray.map( x =>
-                <ThemeProvider theme={props.highestPlayer[x].player === props.player.username ? theme : noneTheme} key={x}>
+                <ThemeProvider theme={props.playerSkills[x].highest.player === props.player.username ? theme : noneTheme && props.playerSkills[x].lowest.player === props.player.username ? badTheme : noneTheme } key={x}>
                     <Stats>
                         <StatsImage src={props.skills[x].picture} alt={x} />
                         <StatsText>{x} level: <b> {props.player.skills[x].level} </b></StatsText>
