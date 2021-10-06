@@ -117,7 +117,7 @@ export default function Edit({ questsEcho, questsArrayEcho, questsFunfun, quests
       {Header}
       <Link href="/">Home</Link>
 
-      {session.user.name === "KodeAndre", "Tomkhcoding" ? <p>{session.user.name} is logged in</p> : null}
+      {session.user.name === "KodeAndre" || "Tomkhcoding" ? <p>{session.user.name} is logged in</p> : null}
 
       {Login}
 
