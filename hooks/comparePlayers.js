@@ -36,9 +36,7 @@ function compare(player1, player2, player3, player4, player5, skills) {
          allPlayers.forEach(player => {
             
             if (player.skills[skillsArray[i]].xp === highest) { highestPlayer = player }
-            console.log(highestPlayer.username)
             if (player.skills[skillsArray[i]].xp === lowest) { lowestPlayer = player }
-            console.log(lowestPlayer.username)
          });
          
       for (let x = 0; x < skillsArray.length; x++) {
