@@ -130,7 +130,7 @@ export default function Edit({ questsEcho, questsArrayEcho, questsFunfun, quests
       </div> : null}
 
       {session.user.name === "Funfun" ? <div>
-        {questNamesFunfun.map( x =>
+        {questNamesFunfun.map( (x , i)=>
           <div key={x}>
               <p>{x} Completed: {questsFunfun.funfun[questsArrayFunfun[i]].completed}</p>
           </div>
@@ -138,7 +138,7 @@ export default function Edit({ questsEcho, questsArrayEcho, questsFunfun, quests
       </div> : null}
 
       {session.user.name === "Tomkhcoding" ? <div>
-        {questNamesEmerald.map( x =>
+        {questNamesEmerald.map( (x, i) =>
           <div key={x}>
               <p>{x} Completed: {questsEmerald.emerald[questsArrayEmerald[i]].completed}</p>
           </div>
@@ -146,7 +146,7 @@ export default function Edit({ questsEcho, questsArrayEcho, questsFunfun, quests
       </div> : null}
 
       {session.user.name === "Ybmad" ? <div>
-        {questNamesYb.map( x =>
+        {questNamesYb.map( (x, i) =>
           <div key={x}>
               <p>{x} Completed: {questsYb.yb[questsArrayYb[i]].completed}</p>
           </div>
@@ -154,7 +154,7 @@ export default function Edit({ questsEcho, questsArrayEcho, questsFunfun, quests
       </div> : null}
 
       {session.user.name === "Fixified" ? <div>
-        {questNamesFixi.map( x =>
+        {questNamesFixi.map( (x, i) =>
           <div key={x}>
               <p>{x} Completed: {questsFixi.fixi[questsArrayFixi[i]].completed}</p>
           </div>
