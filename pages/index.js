@@ -70,7 +70,7 @@ export async function getStaticProps(context) {
   // const emeraldRes = await Hiscores.fetch(`Emerald12`)
   const emerald = JSON.parse(JSON.stringify(emeraldRes))
 
-  const ybRes = await Hiscores.fetch(`GIM YB`)
+  const ybRes = await Hiscores.fetch(`YB GimpMad`)
   // const ybRes = await Hiscores.fetch(`yb ironmad`)
   const yb = JSON.parse(JSON.stringify(ybRes))
 
