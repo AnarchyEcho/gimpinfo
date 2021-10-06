@@ -103,7 +103,7 @@ export default function Home({ playerArray, skills, highestPlayer }) {
       </Banner>
 
       <Title>
-        <h1>Group name here</h1>
+        <h1>UnderDropRate</h1>
         <Link href="/edit" ><a title="Quests Editor">Quests</a></Link>
       </Title>
 
