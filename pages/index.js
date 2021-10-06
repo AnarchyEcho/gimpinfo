@@ -58,19 +58,19 @@ export async function getStaticProps(context) {
   const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
   const skills = await skillsRes.json()
 
-  const echoRes = await Hiscores.fetch(`anarchyrunic`)
+  const echoRes = await Hiscores.fetch(`EchoGIM`)
   const echo = JSON.parse(JSON.stringify(echoRes))
 
-  const funfunRes = await Hiscores.fetch(`agentfunfun`)
+  const funfunRes = await Hiscores.fetch(`GIMFunFun`)
   const funfun = JSON.parse(JSON.stringify(funfunRes))
 
-  const emeraldRes = await Hiscores.fetch(`emerald12`)
+  const emeraldRes = await Hiscores.fetch(`Emerald12GIM`)
   const emerald = JSON.parse(JSON.stringify(emeraldRes))
 
-  const ybRes = await Hiscores.fetch(`yb ironmad`)
+  const ybRes = await Hiscores.fetch(`GIM YB`)
   const yb = JSON.parse(JSON.stringify(ybRes))
 
-  const fixiRes = await Hiscores.fetch(`skolebolle`)
+  const fixiRes = await Hiscores.fetch(`GIM Fixi`)
   const fixi = JSON.parse(JSON.stringify(fixiRes))
 
   const playerArray = [echo, funfun, emerald, yb, fixi]
