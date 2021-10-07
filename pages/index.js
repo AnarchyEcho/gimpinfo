@@ -54,7 +54,7 @@ const Footer = styled.div`
   grid-area: Footer;
 `
 
-export async function getStaticProps(context) {
+export async function getServersideProps(context) {
   const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
   const skills = await skillsRes.json()
 
