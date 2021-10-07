@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* Scrollbar css */
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
     background-color: #20202000;
@@ -36,7 +36,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
 `
-
 
 const theme = {}
 
