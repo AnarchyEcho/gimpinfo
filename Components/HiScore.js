@@ -85,7 +85,7 @@ export default function HiScore(props) {
                     {props.player.bossRecords[x].score >= 0 ? 
                     <div>
                         <StatsImage src={props.bosses[x].picture} alt={x} />
-                        <StatsText>{bosses[x].name} KC: <b> {props.player.bossRecords[x].score} </b></StatsText> 
+                        <StatsText>{props.bosses[x].name} KC: <b> {props.player.bossRecords[x].score} </b></StatsText> 
                     </div>: null
                         }
                 </Stats>)}
