@@ -96,7 +96,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home({ playerArray, skills, bosses }) {
-  console.log(playerArray[2].bossRecords)
   let playerSkills = compare(...playerArray, skills)
 
   return (
