@@ -162,7 +162,7 @@ export default function Edit({ questsEcho, questsArrayEcho, questsFunfun, quests
       </div> : null}
       
       {session.user.name !== "Fixified" || "Ybmad" || "Tomkhcoding" || "Funfun" || "KodeAndre" ? <div>
-          <p>You aren't on the authorized list to see the quests editor. Please contact @KodeAndre or @Tomkhcoding on github for inquiries.</p>
+          <p>You aren&#39t on the authorized list to see the quests editor. Please contact @KodeAndre or @Tomkhcoding on github for inquiries.</p>
       </div> : null}
 
     </>
