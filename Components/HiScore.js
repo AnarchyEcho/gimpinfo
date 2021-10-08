@@ -25,6 +25,22 @@ const Stats = styled.div`
         margin-right: 0;
     }
 `
+const BossStats = styled.div`
+    text-transform: capitalize;
+    align-items: center;
+    margin-left: 30%;
+    margin-right: 20%;
+    height: 50%;
+    @media (max-width: 768px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+`
+const BossInfo = styled.div`
+    display: flex;
+    align-items: center;
+
+`
 const StatsText = styled.p`
     text-indent: 3px;
     color:${props => props.theme.color};
@@ -81,14 +97,13 @@ export default function HiScore(props) {
             <HiScoreLine />
 
             {killsArray.map( x =>
-                <Stats key={x}>
+                <BossStats key={x}>
                     {props.player.bossRecords[x].score >= 0 ? 
-                    <div>
-                        <StatsImage src={props.bosses[x].picture} alt={x} />
-                        <StatsText>{props.bosses[x].name} KC: <b> {props.player.bossRecords[x].score} </b></StatsText> 
-                    </div>: null
+                    <BossInfo>
+                        <StatsImage src={props.bosses[x].picture} alt={x} /><StatsText>{props.bosses[x].name} KC: <b> {props.player.bossRecords[x].score} </b></StatsText> 
+                    </BossInfo>: null
                         }
-                </Stats>)}
+                </BossStats>)}
         </Container>
     )
 }
