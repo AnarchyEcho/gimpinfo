@@ -54,9 +54,13 @@ const Footer = styled.div`
   grid-area: Footer;
 `
 
+
 export async function getServerSideProps(context) {
   const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
   const skills = await skillsRes.json()
+  
+  const bossesRes = await fetch('https://gimpinfo.vercel.app/api/bosses')
+  const bosses = await bossesRes.json()
 
   const echoRes = await Hiscores.fetch(`EchoGIM`)
   // const echoRes = await Hiscores.fetch(`anarchyrunic`)
@@ -78,21 +82,22 @@ export async function getServerSideProps(context) {
   // const fixiRes = await Hiscores.fetch(`skolebolle`)
   const fixi = JSON.parse(JSON.stringify(fixiRes))
 
+
   const playerArray = [echo, funfun, emerald, yb, fixi]
 
-  let playerSkills = compare(...playerArray, skills)
-
+  
   return {
     props: {
       playerArray,
       skills,
-      playerSkills
+      bosses,
     },
   }
 }
 
-export default function Home({ playerArray, skills, playerSkills }) {
-
+export default function Home({ playerArray, skills, bosses }) {
+  console.log(playerArray[2].bossRecords)
+  let playerSkills = compare(...playerArray, skills)
 
   return (
     <Container>
@@ -116,7 +121,7 @@ export default function Home({ playerArray, skills, playerSkills }) {
 
         {playerArray.map(player =>
           <Player key={player.username}>
-            <HiScore player={player} skills={skills} playerSkills={playerSkills} />
+            <HiScore player={player} skills={skills} playerSkills={playerSkills} bosses={bosses}/>
           </Player>
         )}
 

@@ -60,7 +60,9 @@ export default function HiScore(props) {
             <Username>{props.player.username}</Username>
 
             {skillsArray.map( x =>
-                <ThemeProvider theme={props.playerSkills[x].highest.player === props.player.username ? theme : noneTheme && props.playerSkills[x].lowest.player === props.player.username ? badTheme : noneTheme } key={x}>
+                <ThemeProvider theme={props.playerSkills[x].highest.player === props.player.username ? 
+                    theme : noneTheme && props.playerSkills[x].lowest.player === props.player.username ?
+                    badTheme : noneTheme } key={x}>
                     <Stats>
                         <StatsImage src={props.skills[x].picture} alt={x} />
                         <StatsText>{x} level: <b> {props.player.skills[x].level} </b></StatsText>
@@ -72,14 +74,20 @@ export default function HiScore(props) {
 
             {cluesArray.map( x =>
                 <Stats key={x}>
-                    {props.player.clues[x].score >= 0 ? <StatsText>{x} Clues: <b> {props.player.clues[x].score} </b></StatsText> : null}
-                </Stats>)}
+                    {props.player.clues[x].score >= 0 ? 
+                        <StatsText>{x} Clues: <b> {props.player.clues[x].score} </b></StatsText> : null}
+                        </Stats>)}
 
             <HiScoreLine />
 
             {killsArray.map( x =>
                 <Stats key={x}>
-                    {props.player.bossRecords[x].score >= 0 ? <StatsText>{x} KC: <b> {props.player.bossRecords[x].score} </b></StatsText> : null}
+                    {props.player.bossRecords[x].score >= 0 ? 
+                    <div>
+                        <StatsImage src={props.bosses[x].picture} alt={x} />
+                        <StatsText>{bosses[x].name} KC: <b> {props.player.bossRecords[x].score} </b></StatsText> 
+                    </div>: null
+                        }
                 </Stats>)}
         </Container>
     )
