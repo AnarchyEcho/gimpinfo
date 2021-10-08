@@ -24,11 +24,11 @@ export default function handler(req, res) {
             picture :"/bosses/Hellpuppy.png",
             name : "Cerberus"
         },
-        chambersOfXeric : {
+        chambersofXeric : {
             picture :"/bosses/Olmlet.png",
             name : "CoX"
         },
-        chambersOfXericChallengeMode : {
+        chambersofXericChallengeMode : {
             picture :"/bosses/Metamorphicdust.png",
             name : "CoX CM"
         },
@@ -176,7 +176,7 @@ export default function handler(req, res) {
             picture :"/bosses/vorkathshead.png",
             name : "Vorkath"
         },
-        Wintertodt : {
+        wintertodt : {
             picture :"/bosses/Phoenix.png",
             name : "Wintertodt"
         },
