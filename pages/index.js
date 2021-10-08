@@ -59,7 +59,7 @@ export async function getServerSideProps(context) {
   const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
   const skills = await skillsRes.json()
   
-  const bossesRes = await fetch('https://gimpinfo.vercel.app/api/bosses')
+  const bossesRes = await fetch('https://gimpinfo.vercel.app/api/Bosses')
   const bosses = await bossesRes.json()
 
   const echoRes = await Hiscores.fetch(`EchoGIM`)
