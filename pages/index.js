@@ -40,6 +40,22 @@ const Banner = styled.div`
 const Title = styled.div`
   justify-self: center;
   grid-area: Title;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "TitleName"
+    "Links";
+`
+const TitleName = styled.h1`
+  grid-area: TitleName;
+`
+const Links = styled.div`
+  grid-area: Links;
+  display: flex;
+  column-gap: 10px;
 `
 const Player = styled.div`
 
@@ -112,9 +128,11 @@ export default function Home({ playerArray, skills, bosses }) {
       </Banner>
 
       <Title>
-        <h1>UnderDropRate</h1>
-        <Link href="/edit" ><a title="Quests Editor">Quests</a></Link>
-        <Link href="/bank" ><a title="Group Bank">Bank</a></Link>
+        <TitleName>UnderDropRate</TitleName>
+        <Links>
+          <Link href="/edit" ><a title="Quests Editor">Quests</a></Link>
+          <Link href="/bank" ><a title="Group Bank">Bank</a></Link>
+        </Links>
       </Title>
 
       <Main>
