@@ -1,8 +1,15 @@
 import { Items } from 'oldschooljs';
 
+export async function getServerSideProps(context) {
+    const item = await Items.get("twisted bow")
+    console.log(item)
+    return {
+        props: {
+            item
+        }
+    }
+}
 
-const item = Items.get("twisted bow")
-console.log(item)
 export default function Bank() {
 
     return (
