@@ -51,14 +51,11 @@ const StatsImage = styled.img`
     height: 25px;
 `
 const HiScoreLine = styled.hr`
-    border-top: 0;
+    border-top: 2px solid black;
     border-bottom: 0;
     border-right: 0;
     border-left: 0;
     height: 25px;
-    background-image: url('https://www.runescape.com/img/rsp777/hiscores/scroll_middle.gif');
-    background-repeat: repeat-y;
-    background-size: 100% auto;
 `
 
 export default function HiScore(props) {
