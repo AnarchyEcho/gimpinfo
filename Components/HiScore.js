@@ -18,7 +18,7 @@ const Stats = styled.div`
     display: flex;
     align-items: center;
     margin-left: 30%;
-    margin-right: 20%;
+    margin-right: 18%;
     height: 50%;
     @media (max-width: 768px) {
         margin-left: 0;
