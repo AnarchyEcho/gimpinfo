@@ -97,12 +97,9 @@ const Footer = styled.div`
     const fixiRes = await Hiscores.fetch(`GIM Fixi`)
     // const fixiRes = await Hiscores.fetch(`skolebolle`)
     const fixi = JSON.parse(JSON.stringify(fixiRes))
-  
-    
+
     const playerArray = [echo, funfun, emerald, yb, fixi]
-    
-    
-    
+
     return {
       props: {
         playerArray,
@@ -114,6 +111,7 @@ const Footer = styled.div`
   }
 
 export default function Home({ playerArray, skills, bosses }) {
+
   let playerSkills = compare(...playerArray, skills)
   const [check, setCheck] = useState(0)
 
@@ -123,7 +121,7 @@ export default function Home({ playerArray, skills, bosses }) {
         setCheck(check + 1)
     }, 90000);
     return () => clearInterval(id);
-}, [check])
+  }, [check])
 
   return (
     <Container>
