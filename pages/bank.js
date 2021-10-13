@@ -1,5 +1,6 @@
 import { Items } from 'oldschooljs';
 import Head from 'next/head'
+import Link from 'next/link'
 
 export async function getStaticProps(context) {
     
@@ -22,6 +23,7 @@ export default function Bank() {
     return (
         <div>
             {Header}
+            <Link href="/">Home</Link>
             <p>lol</p>
         </div>
     )
