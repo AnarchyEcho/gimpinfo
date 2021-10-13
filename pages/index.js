@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Hiscores } from 'oldschooljs'
+import { useRouter } from 'next/router';
+import {useState, useEffect} from 'react'
 const { compare } = require('../hooks/comparePlayers')
 
 import HiScore from '../Components/HiScore'
@@ -70,50 +72,64 @@ const Footer = styled.div`
   grid-area: Footer;
 `
 
-
-export async function getStaticProps(context) {
-  const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
-  const skills = await skillsRes.json()
+  export async function getStaticProps(context) {
+    const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
+    const skills = await skillsRes.json()
+    
+    const bossesRes = await fetch('https://gimpinfo.vercel.app/api/Bosses')
+    const bosses = await bossesRes.json()
+    
+    const echoRes = await Hiscores.fetch(`EchoGIM`)
+    // const echoRes = await Hiscores.fetch(`anarchyrunic`)
+    const echo = JSON.parse(JSON.stringify(echoRes))
   
-  const bossesRes = await fetch('https://gimpinfo.vercel.app/api/Bosses')
-  const bosses = await bossesRes.json()
-
-  const echoRes = await Hiscores.fetch(`EchoGIM`)
-  // const echoRes = await Hiscores.fetch(`anarchyrunic`)
-  const echo = JSON.parse(JSON.stringify(echoRes))
-
-  const funfunRes = await Hiscores.fetch(`GIMFunFun`)
-  // const funfunRes = await Hiscores.fetch(`agentfunfun`)
-  const funfun = JSON.parse(JSON.stringify(funfunRes))
-
-  const emeraldRes = await Hiscores.fetch(`Emerald12GIM`)
-  // const emeraldRes = await Hiscores.fetch(`Emerald12`)
-  const emerald = JSON.parse(JSON.stringify(emeraldRes))
-
-  const ybRes = await Hiscores.fetch(`YB GimpMad`)
-  // const ybRes = await Hiscores.fetch(`yb ironmad`)
-  const yb = JSON.parse(JSON.stringify(ybRes))
-
-  const fixiRes = await Hiscores.fetch(`GIM Fixi`)
-  // const fixiRes = await Hiscores.fetch(`skolebolle`)
-  const fixi = JSON.parse(JSON.stringify(fixiRes))
-
-
-  const playerArray = [echo, funfun, emerald, yb, fixi]
-
+    const funfunRes = await Hiscores.fetch(`GIMFunFun`)
+    // const funfunRes = await Hiscores.fetch(`agentfunfun`)
+    const funfun = JSON.parse(JSON.stringify(funfunRes))
+    
+    const emeraldRes = await Hiscores.fetch(`Emerald12GIM`)
+    // const emeraldRes = await Hiscores.fetch(`Emerald12`)
+    const emerald = JSON.parse(JSON.stringify(emeraldRes))
+    
+    const ybRes = await Hiscores.fetch(`YB GimpMad`)
+    // const ybRes = await Hiscores.fetch(`yb ironmad`)
+    const yb = JSON.parse(JSON.stringify(ybRes))
+    
+    const fixiRes = await Hiscores.fetch(`GIM Fixi`)
+    // const fixiRes = await Hiscores.fetch(`skolebolle`)
+    const fixi = JSON.parse(JSON.stringify(fixiRes))
   
-  return {
-    props: {
-      playerArray,
-      skills,
-      bosses,
-    },
-    revalidate: 30,
+    
+    const playerArray = [echo, funfun, emerald, yb, fixi]
+    
+    
+    
+    return {
+      props: {
+        playerArray,
+        skills,
+        bosses,
+      },
+      revalidate: 30,
+    }
   }
-}
 
 export default function Home({ playerArray, skills, bosses }) {
   let playerSkills = compare(...playerArray, skills)
+  const [check, setCheck] = useState(0)
+  const router = useRouter();
+  // Call this function whenever you want to
+  // refresh props!
+  const refreshData = () => {
+    router.replace(router.asPath);
+  }
+  useEffect(() => {
+    const id = setInterval(() => {
+        document.location.reload()
+        setCheck(check + 1)
+    }, 30000);
+    return () => clearInterval(id);
+}, [check])
 
   return (
     <Container>
