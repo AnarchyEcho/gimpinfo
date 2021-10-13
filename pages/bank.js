@@ -4,7 +4,6 @@ import Head from 'next/head'
 export async function getStaticProps(context) {
     
     const guthans = Items.filter(item => item.name.includes('Guthan'))
-    console.log(Items)
     return {
         props: {
             

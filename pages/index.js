@@ -129,17 +129,11 @@ export default function Home({ playerArray, skills, bosses }) {
       </Banner>
 
       <Title>
-<<<<<<< HEAD
-        <h1>UnderDropRate</h1>
-        <Link href="/edit" ><a title="Quests Editor">Quests</a></Link>
-        <Link href="/bank" ><a title="Group Bank"> Bank</a></Link>
-=======
         <TitleName>UnderDropRate</TitleName>
         <Links>
           <Link href="/edit" ><a title="Quests Editor">Quests</a></Link>
           <Link href="/bank" ><a title="Group Bank">Bank</a></Link>
         </Links>
->>>>>>> 561c12040302374d7c6a811d1c36b7c76316aa4d
       </Title>
 
       <Main>
