@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Hiscores } from 'oldschooljs'
-import { useRouter } from 'next/router';
 import {useState, useEffect} from 'react'
 const { compare } = require('../hooks/comparePlayers')
 
@@ -117,17 +116,12 @@ const Footer = styled.div`
 export default function Home({ playerArray, skills, bosses }) {
   let playerSkills = compare(...playerArray, skills)
   const [check, setCheck] = useState(0)
-  const router = useRouter();
-  // Call this function whenever you want to
-  // refresh props!
-  const refreshData = () => {
-    router.replace(router.asPath);
-  }
+
   useEffect(() => {
     const id = setInterval(() => {
         document.location.reload()
         setCheck(check + 1)
-    }, 30000);
+    }, 90000);
     return () => clearInterval(id);
 }, [check])
 
