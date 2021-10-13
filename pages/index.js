@@ -55,7 +55,7 @@ const Footer = styled.div`
 `
 
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
   const skills = await skillsRes.json()
   
@@ -92,6 +92,7 @@ export async function getServerSideProps(context) {
       skills,
       bosses,
     },
+    revalidate: 30,
   }
 }
 
@@ -114,7 +115,7 @@ export default function Home({ playerArray, skills, bosses }) {
       <Title>
         <h1>UnderDropRate</h1>
         <Link href="/edit" ><a title="Quests Editor">Quests</a></Link>
-        <Link href="/bank" ><a title="Group Bank">Bank</a></Link>
+        <Link href="/bank" ><a title="Group Bank"> Bank</a></Link>
       </Title>
 
       <Main>
