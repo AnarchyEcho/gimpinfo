@@ -127,7 +127,7 @@ export default function Home({ playerArray, skills, bosses }) {
     const id = setInterval(() => {
         document.location.reload()
         setCheck(check + 1)
-    }, 30000);
+    }, 90000);
     return () => clearInterval(id);
 }, [check])
 
