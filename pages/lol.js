@@ -21,8 +21,8 @@ function CommentsPage() {
     console.log(data)
   }
 
-  const deleteComment = async commentId => {
-    const response = await fetch(`/api/TomPost/${commentId}`, {
+  const deleteComment = async commentKey => {
+    const response = await fetch(`/api/TomPost/${commentKey}`, {
       method: 'DELETE'
     })
     const data = await response.json()
@@ -43,9 +43,9 @@ function CommentsPage() {
       <button onClick={fetchComments}>Load comments</button>
       {comments.map(comment => {
         return (
-          <div key={comment.id}>
-            {comment.id}. {comment.text}
-            <button onClick={() => deleteComment(comment.id)}>Delete</button>
+          <div key={comment.key}>
+            {comment.text}
+            <button onClick={() => deleteComment(comment.key)}>Delete</button>
           </div>
         )
       })}
