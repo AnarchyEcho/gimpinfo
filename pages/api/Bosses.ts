@@ -138,7 +138,7 @@ export default function handler(req, res) {
         },
         theGauntlet : {
             picture :"/bosses/Youngllef.png",
-            name : "The Gauntel"
+            name : "The Gauntlet"
         },
         theCorruptedGauntlet : {
             picture :"/bosses/Gauntletcape.png",

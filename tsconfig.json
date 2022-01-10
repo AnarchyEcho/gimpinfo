@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "hooks/comparePlayers.js", "pages/edit.js"  ],
+, "hooks/comparePlayers.js", "pages/edit.tsx"  ],
   "exclude": [
     "node_modules"
   ]

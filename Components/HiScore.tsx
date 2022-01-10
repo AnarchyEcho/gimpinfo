@@ -41,6 +41,26 @@ const BossInfo = styled.div`
     align-items: center;
 
 `
+const CombatLevels = styled.div`
+    display: flex;
+    align-items: center;
+    margin-left: 30%;
+    margin-right: 18%;
+    height: 50%;
+    @media (max-width: 768px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+`
+const CombatLevelsText = styled.p`
+    text-indent: 3px;
+    color:${props => props.theme.color};
+    font-weight: ${props => props.theme.weight};
+`
+const CombatImage = styled.img`
+    width: 25px;
+    height: 25px;
+`
 const StatsText = styled.p`
     text-indent: 3px;
     color:${props => props.theme.color};
@@ -67,13 +87,31 @@ export default function HiScore(props) {
     const badTheme = {color:"red", weight: "bold"}
     const noneTheme = {color:"black", weight: "inherit"}
 
+	const combatLevel = () =>{
+		const base = 0.25 * (props.player.skills.defence.level + props.player.skills.hitpoints.level + Math.floor(props.player.skills.prayer.level / 2));
+		const melee = 0.325 * (props.player.skills.attack.level + props.player.skills.strength.level);
+		const range = 0.325 * (Math.floor(props.player.skills.ranged.level / 2) + props.player.skills.ranged.level);
+		const mage = 0.325 * (Math.floor(props.player.skills.magic.level / 2) + props.player.skills.magic.level);
+
+		return (
+            <CombatLevels>
+                <CombatImage src='combat.png' />
+                <CombatLevelsText>
+                    Combat Level: <b>{(base + Math.max(melee, range, mage)).toFixed(2)}</b>
+                </CombatLevelsText>
+            </CombatLevels>
+        )
+	}
+
     return (
 
         <Container>
             <Username>{props.player.username}</Username>
 
+            {combatLevel()}
+
             {skillsArray.map( x =>
-                <ThemeProvider theme={props.playerSkills[x].highest.player === props.player.username ? 
+                <ThemeProvider theme={props.playerSkills[x].highest.player === props.player.username ?
                     theme : noneTheme && props.playerSkills[x].lowest.player === props.player.username ?
                     badTheme : noneTheme } key={x}>
                     <Stats>
@@ -87,7 +125,7 @@ export default function HiScore(props) {
 
             {cluesArray.map( x =>
                 <Stats key={x}>
-                    {props.player.clues[x].score >= 0 ? 
+                    {props.player.clues[x].score >= 0 ?
                         <StatsText>{x} Clues: <b> {props.player.clues[x].score} </b></StatsText> : null}
                         </Stats>)}
 
@@ -95,9 +133,9 @@ export default function HiScore(props) {
 
             {killsArray.map( x =>
                 <BossStats key={x}>
-                    {props.player.bossRecords[x].score >= 0 ? 
+                    {props.player.bossRecords[x].score >= 0 ?
                     <BossInfo>
-                        <StatsImage src={props.bosses[x].picture} alt={x} /><StatsText>{props.bosses[x].name} KC: <b> {props.player.bossRecords[x].score} </b></StatsText> 
+                        <StatsImage src={props.bosses[x].picture} alt={x} /><StatsText>{props.bosses[x].name} KC: <b> {props.player.bossRecords[x].score} </b></StatsText>
                     </BossInfo>: null
                         }
                 </BossStats>)}
