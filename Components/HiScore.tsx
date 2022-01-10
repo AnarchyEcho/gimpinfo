@@ -47,6 +47,10 @@ const CombatLevels = styled.div`
     margin-left: 30%;
     margin-right: 18%;
     height: 50%;
+    @media (max-width: 768px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
 `
 const CombatLevelsText = styled.p`
     text-indent: 3px;
@@ -93,7 +97,7 @@ export default function HiScore(props) {
             <CombatLevels>
                 <CombatImage src='combat.png' />
                 <CombatLevelsText>
-                    Combat level: <b>{(base + Math.max(melee, range, mage)).toFixed(2)}</b>
+                    Combat Level: <b>{(base + Math.max(melee, range, mage)).toFixed(2)}</b>
                 </CombatLevelsText>
             </CombatLevels>
         )
