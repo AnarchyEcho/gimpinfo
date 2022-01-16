@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Hiscores } from 'oldschooljs'
+import hiscores from 'osrs-json-hiscores'
 import {useState, useEffect} from 'react'
 const { compare } = require('../hooks/comparePlayers')
 
@@ -74,33 +74,28 @@ const Footer = styled.div`
   export async function getStaticProps(context) {
     const skillsRes = await fetch('https://gimpinfo.vercel.app/api/skills')
     const skills = await skillsRes.json()
-    
+
     const bossesRes = await fetch('https://gimpinfo.vercel.app/api/Bosses')
     const bosses = await bossesRes.json()
-    
-    const echoRes = await Hiscores.fetch(`EchoGIM`)
-    // const echoRes = await Hiscores.fetch(`anarchyrunic`)
-    const echo = JSON.parse(JSON.stringify(echoRes))
-  
-    const funfunRes = await Hiscores.fetch(`GIMFunFun`)
-    // const funfunRes = await Hiscores.fetch(`agentfunfun`)
-    const funfun = JSON.parse(JSON.stringify(funfunRes))
-    
-    const emeraldRes = await Hiscores.fetch(`Emerald12GIM`)
-    // const emeraldRes = await Hiscores.fetch(`Emerald12`)
-    const emerald = JSON.parse(JSON.stringify(emeraldRes))
-    
-    // const ybRes = await Hiscores.fetch(`YB GimpMad`)
-    // const ybRes = await Hiscores.fetch(`yb ironmad`)
-    // const ybRes = await Hiscores.fetch(`UnderDropRat`)
-    const ybRes = await Hiscores.fetch(`YB Mad GIMP`)
-    const yb = JSON.parse(JSON.stringify(ybRes))
-    
-    const fixiRes = await Hiscores.fetch(`GIM Fixi`)
-    // const fixiRes = await Hiscores.fetch(`skolebolle`)
-    const fixi = JSON.parse(JSON.stringify(fixiRes))
 
-    const playerArray = [echo, funfun, emerald, yb, fixi]
+    const echoRes = await hiscores.getStats(`EchoGIM`)
+    // const echoRes = await hiscores.getStats(`anarchyrunic
+
+    const funfunRes = await hiscores.getStats(`GIMFunFun`)
+    // const funfunRes = await hiscores.getStats(`agentfunfun`)
+
+    const emeraldRes = await hiscores.getStats(`Emerald12GIM`)
+    // const emeraldRes = await hiscores.getStats(`Emerald12`)
+
+    // const ybRes = await hiscores.getStats(`YB GimpMad`)
+    // const ybRes = await hiscores.getStats(`yb ironmad`)
+    // const ybRes = await hiscores.getStats(`UnderDropRat`)
+    const ybRes = await hiscores.getStats(`YB Mad GIMP`)
+
+    const fixiRes = await hiscores.getStats(`GIM Fixi`)
+    // const fixiRes = await hiscores.getStats(`skolebolle`)
+
+    const playerArray = [echoRes, funfunRes, emeraldRes, ybRes, fixiRes]
 
     return {
       props: {
@@ -149,8 +144,8 @@ export default function Home({ playerArray, skills, bosses }) {
       <Main>
 
         {playerArray.map(player =>
-          <Player key={player.username}>
-            <HiScore player={player} skills={skills} playerSkills={playerSkills} bosses={bosses}/>
+          <Player key={player.name}>
+            <HiScore player={player.main} skills={skills} playerSkills={playerSkills} bosses={bosses}/>
           </Player>
         )}
 
