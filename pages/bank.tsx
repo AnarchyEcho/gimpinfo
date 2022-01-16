@@ -1,19 +1,17 @@
-import { Items } from 'oldschooljs';
 import Head from 'next/head'
 import Link from 'next/link'
 
 export async function getStaticProps(context) {
-    
-    const guthans = Items.filter(item => item.name.includes('Guthan'))
+
     return {
         props: {
-            
+
         }
     }
 }
 
 export default function Bank() {
-    const Header = 
+    const Header =
         <Head>
           <title>GIMP Bank</title>
           <meta name="description" content="Created by Echo and Tom" />
