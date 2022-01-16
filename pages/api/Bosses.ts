@@ -1,5 +1,5 @@
 export default function handler(req, res) {
-    res.status(200).json({ 
+    res.status(200).json({
         abyssalSire : {
             picture :"/bosses/AbyssalOrphan.png",
             name : "Abyssal sire"
@@ -45,7 +45,7 @@ export default function handler(req, res) {
             name : "Commander Zilyana"
         },
         corporealBeast : {
-            picture :"/bosses/petcorporealcritter.png",
+            picture :"/bosses/Petcorporealcritter.png",
             name : "Corporeal Beast"
         },
         crazyArchaeologist : {
@@ -73,7 +73,7 @@ export default function handler(req, res) {
             name : "General Graardor"
         },
         giantMole : {
-            picture :"/bosses/Baby mole.png",
+            picture :"/bosses/Babymole.png",
             name : "GiantMole"
         },
         grotesqueGuardians : {
@@ -129,7 +129,7 @@ export default function handler(req, res) {
             name : "Sarachnis"
         },
         scorpia : {
-            picture :"/bosses/Scorpias offspring.png",
+            picture :"/bosses/Scorpiasoffspring.png",
             name : "Scorpia"
         },
         skotizo : {
@@ -161,11 +161,11 @@ export default function handler(req, res) {
             name : "Thermonuclear Smoke Devil"
         },
         tzKalZuk : {
-            picture :"/bosses/tzrekzuk.png",
+            picture :"/bosses/Tzrekzuk.png",
             name : "Zuk"
         },
         tzTokJad : {
-            picture :"/bosses/tzrekjad.png",
+            picture :"/bosses/Tzrekjad.png",
             name : "Jad"
         },
         venenatis : {
@@ -177,7 +177,7 @@ export default function handler(req, res) {
             name : "Vet'ion"
         },
         vorkath : {
-            picture :"/bosses/vorkathshead.png",
+            picture :"/bosses/Vorkathshead.png",
             name : "Vorkath"
         },
         wintertodt : {
@@ -189,7 +189,7 @@ export default function handler(req, res) {
             name : "Zalcano"
         },
         zulrah : {
-            picture :"/bosses/snakeling.png",
+            picture :"/bosses/Snakeling.png",
             name : "Zulrah"
         }
     })}

@@ -145,7 +145,7 @@ export default function Home({ playerArray, skills, bosses }) {
 
         {playerArray.map(player =>
           <Player key={player.name}>
-            <HiScore player={player.main} skills={skills} playerSkills={playerSkills} bosses={bosses}/>
+            <HiScore player={player.main} skills={skills} playerSkills={playerSkills} bosses={bosses} name={player.name} />
           </Player>
         )}
 

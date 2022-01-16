@@ -106,7 +106,7 @@ export default function HiScore(props) {
     return (
 
         <Container>
-            <Username>{props.player.name}</Username>
+            <Username>{props.name}</Username>
 
             {combatLevel()}
 
