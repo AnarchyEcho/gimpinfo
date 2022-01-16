@@ -87,7 +87,7 @@ export default function Edit({ questsEcho, questsArrayEcho, questsFunfun, quests
                 </>
             ) : (
                 <>
-                    <button onClick={signOut}>Logout</button> <br />
+                    <button onClick={() => signOut()}>Logout</button> <br />
                 </>
             )}
         </div>;

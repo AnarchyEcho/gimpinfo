@@ -8,7 +8,7 @@ export default function handler(req, res) {
             picture :"/bosses/IkkleHydra.png",
             name : "Alchemical Hydra"
         },
-        barrowsChests : {
+        barrows : {
             picture :"/bosses/Chestbarrows.png",
             name : "Barrows"
         },
@@ -24,11 +24,11 @@ export default function handler(req, res) {
             picture :"/bosses/Hellpuppy.png",
             name : "Cerberus"
         },
-        chambersofXeric : {
+        chambersOfXeric : {
             picture :"/bosses/Olmlet.png",
             name : "CoX"
         },
-        chambersofXericChallengeMode : {
+        chambersOfXericChallengeMode : {
             picture :"/bosses/Metamorphicdust.png",
             name : "CoX CM"
         },
@@ -44,11 +44,11 @@ export default function handler(req, res) {
             picture :"/bosses/Petzilyana.png",
             name : "Commander Zilyana"
         },
-        corporalBeast : {
+        corporealBeast : {
             picture :"/bosses/petcorporealcritter.png",
             name : "Corporeal Beast"
         },
-        crazyArcheologist : {
+        crazyArchaeologist : {
             picture :"/bosses/Fedora.png",
             name : "Crazy Archaeologist"
         },
@@ -108,6 +108,10 @@ export default function handler(req, res) {
             picture :"/bosses/The_Mimic.png",
             name : "Mimic"
         },
+        nex : {
+            picture :"/bosses/Nexling.png",
+            name : "Nex"
+        },
         nightmare : {
             picture :"/bosses/Littlenightmare.png",
             name : "Nightmare"
@@ -136,19 +140,19 @@ export default function handler(req, res) {
             picture :"/bosses/Tinytempor.png",
             name : "Tempoross"
         },
-        theGauntlet : {
+        gauntlet : {
             picture :"/bosses/Youngllef.png",
-            name : "The Gauntel"
+            name : "The Gauntlet"
         },
-        theCorruptedGauntlet : {
+        corruptedGauntlet : {
             picture :"/bosses/Gauntletcape.png",
             name : "The Corrupted Gauntlet"
         },
-        theatreofBlood : {
+        theatreOfBlood : {
             picture :"/bosses/Lilzik.png",
             name : "ToB"
         },
-        theatreofBloodHard : {
+        theatreOfBloodHardMode : {
             picture :"/bosses/Sanguinedust.png",
             name : "ToB Hardmode"
         },

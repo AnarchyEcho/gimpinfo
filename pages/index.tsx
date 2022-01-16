@@ -92,7 +92,8 @@ const Footer = styled.div`
     
     // const ybRes = await Hiscores.fetch(`YB GimpMad`)
     // const ybRes = await Hiscores.fetch(`yb ironmad`)
-    const ybRes = await Hiscores.fetch(`UnderDropRat`)
+    // const ybRes = await Hiscores.fetch(`UnderDropRat`)
+    const ybRes = await Hiscores.fetch(`YB Mad GIMP`)
     const yb = JSON.parse(JSON.stringify(ybRes))
     
     const fixiRes = await Hiscores.fetch(`GIM Fixi`)
