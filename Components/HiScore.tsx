@@ -82,7 +82,7 @@ export default function HiScore(props) {
 
     const skillsArray = Object.keys(props.skills)
     const cluesArray = Object.keys(props.player.clues)
-    const killsArray = Object.keys(props.player.bossRecords)
+    const killsArray = Object.keys(props.player.bosses)
     const theme = {color:"green", weight: "bold"}
     const badTheme = {color:"red", weight: "bold"}
     const noneTheme = {color:"black", weight: "inherit"}
@@ -106,13 +106,13 @@ export default function HiScore(props) {
     return (
 
         <Container>
-            <Username>{props.player.username}</Username>
+            <Username>{props.player.name}</Username>
 
             {combatLevel()}
 
             {skillsArray.map( x =>
-                <ThemeProvider theme={props.playerSkills[x].highest.player === props.player.username ?
-                    theme : noneTheme && props.playerSkills[x].lowest.player === props.player.username ?
+                <ThemeProvider theme={props.playerSkills[x].highest.player === props.player.name ?
+                    theme : noneTheme && props.playerSkills[x].lowest.player === props.player.name ?
                     badTheme : noneTheme } key={x}>
                     <Stats>
                         <StatsImage src={props.skills[x].picture} alt={x} />
@@ -133,10 +133,10 @@ export default function HiScore(props) {
 
             {killsArray.map( x =>
                 <BossStats key={x}>
-                    {props.player.bossRecords[x].score >= 0 ?
+                    {props.player.bosses[x].score >= 0 ?
                     <BossInfo>
-                        <StatsImage src={props.bosses[x].picture} alt={x} /><StatsText>{props.bosses[x].name} KC: <b> {props.player.bossRecords[x].score} </b></StatsText>
-                    </BossInfo>: null
+                        <StatsImage src={props.bosses[x].picture} alt={x} /><StatsText>{props.bosses[x].name} KC: <b> {props.player.bosses[x].score} </b></StatsText>
+                    </BossInfo> : null
                         }
                 </BossStats>)}
         </Container>
