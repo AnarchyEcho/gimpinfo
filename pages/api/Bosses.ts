@@ -108,6 +108,10 @@ export default function handler(req, res) {
             picture :"/bosses/The_Mimic.png",
             name : "Mimic"
         },
+        nex : {
+            picture :"/bosses/Nexling.png",
+            name : "Nex"
+        },
         nightmare : {
             picture :"/bosses/Littlenightmare.png",
             name : "Nightmare"
