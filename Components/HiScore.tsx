@@ -111,8 +111,8 @@ export default function HiScore(props) {
             {combatLevel()}
 
             {skillsArray.map( x =>
-                <ThemeProvider theme={props.playerSkills[x].highest.player === props.player.name ?
-                    theme : noneTheme && props.playerSkills[x].lowest.player === props.player.name ?
+                <ThemeProvider theme={props.playerSkills[x].highest.player === props.name ?
+                    theme : noneTheme && props.playerSkills[x].lowest.player === props.name ?
                     badTheme : noneTheme } key={x}>
                     <Stats>
                         <StatsImage src={props.skills[x].picture} alt={x} />

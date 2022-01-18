@@ -1,4 +1,4 @@
-function compare(player1, player2, player3, player4, player5, skills) {
+export function compare(player1, player2, player3, player4, player5, skills) {
    const skillsArray = Object.keys(skills)
 
    const player1XP = skillsArray.map(x =>
@@ -28,8 +28,8 @@ function compare(player1, player2, player3, player4, player5, skills) {
       let playerSkills = {};
 
       for (let i = 0; i < allPlayersXP[0].length; i++) {
-         let highestPlayer = ''
-         let lowestPlayer = ''
+         let highestPlayer: any = ''
+         let lowestPlayer: any = ''
 
          const highest = (Math.max(player1XP[i], player2XP[i], player3XP[i], player4XP[i], player5XP[i]))
          const lowest = (Math.min(player1XP[i], player2XP[i], player3XP[i], player4XP[i], player5XP[i]))
