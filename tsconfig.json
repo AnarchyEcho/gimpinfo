@@ -16,13 +16,16 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "hooks/comparePlayers.ts", "pages/edit.tsx"  ],
+    "**/*.tsx",
+    "hooks/comparePlayers.ts",
+    "pages/edit.tsx"
+  ],
   "exclude": [
     "node_modules"
   ]
