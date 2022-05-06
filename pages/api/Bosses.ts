@@ -1,195 +1,196 @@
 export default function handler(req, res) {
     res.status(200).json({
-        abyssalSire : {
-            picture :"/bosses/AbyssalOrphan.png",
-            name : "Abyssal sire"
+        abyssalSire: {
+            picture: "/bosses/AbyssalOrphan.png",
+            name: "Abyssal sire"
         },
-        alchemicalHydra : {
-            picture :"/bosses/IkkleHydra.png",
-            name : "Alchemical Hydra"
+        alchemicalHydra: {
+            picture: "/bosses/IkkleHydra.png",
+            name: "Alchemical Hydra"
         },
-        barrows : {
-            picture :"/bosses/Chestbarrows.png",
-            name : "Barrows"
+        barrows: {
+            picture: "/bosses/Chestbarrows.png",
+            name: "Barrows"
         },
-        bryophyta : {
-            picture :"/bosses/Bryophytasessence.png",
-            name : "Bryophyta"
+        bryophyta: {
+            picture: "/bosses/Bryophytasessence.png",
+            name: "Bryophyta"
         },
-        callisto : {
-            picture :"/bosses/Callistocub.png",
-            name : "Callisto"
+        callisto: {
+            picture: "/bosses/Callistocub.png",
+            name: "Callisto"
         },
-        cerberus : {
-            picture :"/bosses/Hellpuppy.png",
-            name : "Cerberus"
+        cerberus: {
+            picture: "/bosses/Hellpuppy.png",
+            name: "Cerberus"
         },
-        chambersOfXeric : {
-            picture :"/bosses/Olmlet.png",
-            name : "CoX"
+        chambersOfXeric: {
+            picture: "/bosses/Olmlet.png",
+            name: "CoX"
         },
-        chambersOfXericChallengeMode : {
-            picture :"/bosses/Metamorphicdust.png",
-            name : "CoX CM"
+        chambersOfXericChallengeMode: {
+            picture: "/bosses/Metamorphicdust.png",
+            name: "CoX CM"
         },
-        chaosElemental : {
-            picture :"/bosses/Petchaoselemental.png",
-            name : "Chaos Elemental"
+        chaosElemental: {
+            picture: "/bosses/Petchaoselemental.png",
+            name: "Chaos Elemental"
         },
-        chaosFanatic : {
-            picture :"/bosses/Odiumshard1.png",
-            name : "Chaos Fanatic"
+        chaosFanatic: {
+            picture: "/bosses/Odiumshard1.png",
+            name: "Chaos Fanatic"
         },
-        commanderZilyana : {
-            picture :"/bosses/Petzilyana.png",
-            name : "Commander Zilyana"
+        commanderZilyana: {
+            picture: "/bosses/Petzilyana.png",
+            name: "Commander Zilyana"
         },
-        corporealBeast : {
-            picture :"/bosses/Petcorporealcritter.png",
-            name : "Corporeal Beast"
+        corporealBeast: {
+            picture: "/bosses/Petcorporealcritter.png",
+            name: "Corporeal Beast"
         },
-        crazyArchaeologist : {
-            picture :"/bosses/Fedora.png",
-            name : "Crazy Archaeologist"
+        crazyArchaeologist: {
+            picture: "/bosses/Fedora.png",
+            name: "Crazy Archaeologist"
         },
-        dagannothPrime : {
-            picture :"/bosses/Petdagannothprime.png",
-            name : "Dagannoth Prime"
+        dagannothPrime: {
+            picture: "/bosses/Petdagannothprime.png",
+            name: "Dagannoth Prime"
         },
-        dagannothRex : {
-            picture :"/bosses/Petdagannothrex.png",
-            name : "Dagannoth Rex"
+        dagannothRex: {
+            picture: "/bosses/Petdagannothrex.png",
+            name: "Dagannoth Rex"
         },
-        dagannothSupreme : {
-            picture :"/bosses/Petdagannothsupreme.png",
-            name : "Dagannoth Supreme"
+        dagannothSupreme: {
+            picture: "/bosses/Petdagannothsupreme.png",
+            name: "Dagannoth Supreme"
         },
-        derangedArchaeologist : {
-            picture :"/bosses/Wintertodtparable.png",
-            name : "Deranged Archaeologist"
+        derangedArchaeologist: {
+            picture: "/bosses/Wintertodtparable.png",
+            name: "Deranged Archaeologist"
         },
-        generalGraardor : {
-            picture :"/bosses/Petgeneralgraardor.png",
-            name : "General Graardor"
+        generalGraardor: {
+            picture: "/bosses/Petgeneralgraardor.png",
+            name: "General Graardor"
         },
-        giantMole : {
-            picture :"/bosses/Babymole.png",
-            name : "GiantMole"
+        giantMole: {
+            picture: "/bosses/Babymole.png",
+            name: "GiantMole"
         },
-        grotesqueGuardians : {
-            picture :"/bosses/Noon.png",
-            name : "Grotesque Guardians"
+        grotesqueGuardians: {
+            picture: "/bosses/Noon.png",
+            name: "Grotesque Guardians"
         },
-        hespori : {
-            picture :"/bosses/Bottomlesscompostbucket.png",
-            name : "Hespori"
+        hespori: {
+            picture: "/bosses/Bottomlesscompostbucket.png",
+            name: "Hespori"
         },
-        kalphiteQueen : {
-            picture :"/bosses/Kalphiteprincess.png",
-            name : "Kalphite Queen"
+        kalphiteQueen: {
+            picture: "/bosses/Kalphiteprincess.png",
+            name: "Kalphite Queen"
         },
-        kingBlackDragon : {
-            picture :"/bosses/Princeblackdragon.png",
-            name : "King Black Dragon"
+        kingBlackDragon: {
+            picture: "/bosses/Princeblackdragon.png",
+            name: "King Black Dragon"
         },
-        kraken : {
-            picture :"/bosses/Petkraken.png",
-            name : "Kraken"
+        kraken: {
+            picture: "/bosses/Petkraken.png",
+            name: "Kraken"
         },
-        kreeArra : {
-            picture :"/bosses/Petkreearra.png",
-            name : "Kree'Arra"
+        kreeArra: {
+            picture: "/bosses/Petkreearra.png",
+            name: "Kree'Arra"
         },
-        krilTsutsaroth : {
-            picture :"/bosses/Petkriltsutsaroth.png",
-            name : "K'ril Tsutsaroth"
+        krilTsutsaroth: {
+            picture: "/bosses/Petkriltsutsaroth.png",
+            name: "K'ril Tsutsaroth"
         },
-        mimic : {
-            picture :"/bosses/The_Mimic.png",
-            name : "Mimic"
+        mimic: {
+            picture: "/bosses/The_Mimic.png",
+            name: "Mimic"
         },
-        nex : {
-            picture :"/bosses/Nexling.png",
-            name : "Nex"
+        nex: {
+            picture: "/bosses/Nexling.png",
+            name: "Nex"
         },
-        nightmare : {
-            picture :"/bosses/Littlenightmare.png",
-            name : "Nightmare"
+        nightmare: {
+            picture: "/bosses/Littlenightmare.png",
+            name: "Nightmare"
         },
-        phosanisNightmare : {
-            picture :"/bosses/Parasiticegg.png",
-            name : "Phosani's Nightmare"
+        phosanisNightmare: {
+            picture: "/bosses/Parasiticegg.png",
+            name: "Phosani's Nightmare"
         },
-        obor : {
-            picture :"/bosses/Hillgiantclub.png",
-            name : "Obor"
+        obor: {
+            picture: "/bosses/Hillgiantclub.png",
+            name: "Obor"
         },
-        sarachnis : {
-            picture :"/bosses/Sraracha.png",
-            name : "Sarachnis"
+        sarachnis: {
+            picture: "/bosses/Sraracha.png",
+            name: "Sarachnis"
         },
-        scorpia : {
-            picture :"/bosses/Scorpiasoffspring.png",
-            name : "Scorpia"
+        scorpia: {
+            picture: "/bosses/Scorpiasoffspring.png",
+            name: "Scorpia"
         },
-        skotizo : {
-            picture :"/bosses/Skotos.png",
-            name : "Skotizo"
+        skotizo: {
+            picture: "/bosses/Skotos.png",
+            name: "Skotizo"
         },
-        tempoross : {
-            picture :"/bosses/Tinytempor.png",
-            name : "Tempoross"
+        tempoross: {
+            picture: "/bosses/Tinytempor.png",
+            name: "Tempoross"
         },
-        gauntlet : {
-            picture :"/bosses/Youngllef.png",
-            name : "The Gauntlet"
+        gauntlet: {
+            picture: "/bosses/Youngllef.png",
+            name: "The Gauntlet"
         },
-        corruptedGauntlet : {
-            picture :"/bosses/Gauntletcape.png",
-            name : "The Corrupted Gauntlet"
+        corruptedGauntlet: {
+            picture: "/bosses/Gauntletcape.png",
+            name: "The Corrupted Gauntlet"
         },
-        theatreOfBlood : {
-            picture :"/bosses/Lilzik.png",
-            name : "ToB"
+        theatreOfBlood: {
+            picture: "/bosses/Lilzik.png",
+            name: "ToB"
         },
-        theatreOfBloodHardMode : {
-            picture :"/bosses/Sanguinedust.png",
-            name : "ToB Hardmode"
+        theatreOfBloodHardMode: {
+            picture: "/bosses/Sanguinedust.png",
+            name: "ToB Hardmode"
         },
-        thermonuclearSmokeDevil : {
-            picture :"/bosses/Petsmokedevil.png",
-            name : "Thermonuclear Smoke Devil"
+        thermonuclearSmokeDevil: {
+            picture: "/bosses/Petsmokedevil.png",
+            name: "Thermonuclear Smoke Devil"
         },
-        tzKalZuk : {
-            picture :"/bosses/Tzrekzuk.png",
-            name : "Zuk"
+        tzKalZuk: {
+            picture: "/bosses/Tzrekzuk.png",
+            name: "Zuk"
         },
-        tzTokJad : {
-            picture :"/bosses/Tzrekjad.png",
-            name : "Jad"
+        tzTokJad: {
+            picture: "/bosses/Tzrekjad.png",
+            name: "Jad"
         },
-        venenatis : {
-            picture :"/bosses/Venenatisspiderling.png",
-            name : "Venenatis"
+        venenatis: {
+            picture: "/bosses/Venenatisspiderling.png",
+            name: "Venenatis"
         },
-        vetion : {
-            picture :"/bosses/Vetionjr.png",
-            name : "Vet'ion"
+        vetion: {
+            picture: "/bosses/Vetionjr.png",
+            name: "Vet'ion"
         },
-        vorkath : {
-            picture :"/bosses/Vorkathshead.png",
-            name : "Vorkath"
+        vorkath: {
+            picture: "/bosses/Vorkathshead.png",
+            name: "Vorkath"
         },
-        wintertodt : {
-            picture :"/bosses/Phoenix.png",
-            name : "Wintertodt"
+        wintertodt: {
+            picture: "/bosses/Phoenix.png",
+            name: "Wintertodt"
         },
-        zalcano : {
-            picture :"/bosses/Smolcano.png",
-            name : "Zalcano"
+        zalcano: {
+            picture: "/bosses/Smolcano.png",
+            name: "Zalcano"
         },
-        zulrah : {
-            picture :"/bosses/Snakeling.png",
-            name : "Zulrah"
+        zulrah: {
+            picture: "/bosses/Snakeling.png",
+            name: "Zulrah"
         }
-    })}
+    })
+}
