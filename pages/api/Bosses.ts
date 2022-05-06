@@ -189,7 +189,7 @@ export default function handler(req, res) {
             name: "Zalcano"
         },
         zulrah: {
-            picture: "/bosses/Snakeling.png",
+            picture: "/bosses/snakeling.png",
             name: "Zulrah"
         }
     })
