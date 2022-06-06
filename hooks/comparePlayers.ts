@@ -1,4 +1,4 @@
-export function compare(player1, player2, player3, player4, player5, skills) {
+export function compare(player1, player2, player3, player4, skills) {
    const skillsArray = Object.keys(skills)
 
    const player1XP = skillsArray.map(x =>
@@ -17,12 +17,12 @@ export function compare(player1, player2, player3, player4, player5, skills) {
       player4.main.skills[x].xp
    );
 
-   const player5XP = skillsArray.map(x =>
-      player5.main.skills[x].xp
-   );
+  //  const player5XP = skillsArray.map(x =>
+  //     player5.main.skills[x].xp
+  //  );
 
-   const allPlayers = [player1, player2, player3, player4, player5]
-   const allPlayersXP = [player1XP, player2XP, player3XP, player4XP, player5XP]
+   const allPlayers = [player1, player2, player3, player4]
+   const allPlayersXP = [player1XP, player2XP, player3XP, player4XP]
 
    function findStatOrder() {
       let playerSkills = {};
@@ -31,8 +31,8 @@ export function compare(player1, player2, player3, player4, player5, skills) {
          let highestPlayer: any = ''
          let lowestPlayer: any = ''
 
-         const highest = (Math.max(player1XP[i], player2XP[i], player3XP[i], player4XP[i], player5XP[i]))
-         const lowest = (Math.min(player1XP[i], player2XP[i], player3XP[i], player4XP[i], player5XP[i]))
+         const highest = (Math.max(player1XP[i], player2XP[i], player3XP[i], player4XP[i]))
+         const lowest = (Math.min(player1XP[i], player2XP[i], player3XP[i], player4XP[i]))
          allPlayers.forEach(player => {
 
             if (player.main.skills[skillsArray[i]].xp === highest) { highestPlayer = player }

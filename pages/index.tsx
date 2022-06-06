@@ -81,21 +81,18 @@ const Footer = styled.div`
     const echoRes = await hiscores.getStats(`EchoGIM`)
     // const echoRes = await hiscores.getStats(`anarchyrunic
 
+    const heraRes = await hiscores.getStats(`heragimp`)
+
     const funfunRes = await hiscores.getStats(`GIMFunFun`)
     // const funfunRes = await hiscores.getStats(`agentfunfun`)
 
     const emeraldRes = await hiscores.getStats(`Emerald12GIM`)
     // const emeraldRes = await hiscores.getStats(`Emerald12`)
 
-    // const ybRes = await hiscores.getStats(`YB GimpMad`)
-    // const ybRes = await hiscores.getStats(`yb ironmad`)
-    // const ybRes = await hiscores.getStats(`UnderDropRat`)
-    const ybRes = await hiscores.getStats(`YB Mad GIMP`)
-
     const fixiRes = await hiscores.getStats(`GIM Fixi`)
     // const fixiRes = await hiscores.getStats(`skolebolle`)
 
-    const playerArray = [echoRes, funfunRes, emeraldRes, ybRes, fixiRes]
+    const playerArray = [echoRes, heraRes, emeraldRes, fixiRes]
 
     return {
       props: {
