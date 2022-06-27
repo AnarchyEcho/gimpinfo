@@ -86,7 +86,8 @@ const Footer = styled.div`
     const funfunRes = await hiscores.getStats(`GIMFunFun`)
     // const funfunRes = await hiscores.getStats(`agentfunfun`)
 
-    const emeraldRes = await hiscores.getStats(`Emerald12GIM`)
+    const emeraldRes = await hiscores.getStats(`Alch Me Now`)
+    // const emeraldRes = await hiscores.getStats(`Emerald12GIM`)
     // const emeraldRes = await hiscores.getStats(`Emerald12`)
 
     const fixiRes = await hiscores.getStats(`GIM Fixi`)
